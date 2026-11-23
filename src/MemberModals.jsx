@@ -3,6 +3,14 @@ import { X, MapPin, Edit3, Plus, Trash2 } from 'lucide-react';
 
 const GENERATION_LIST = Array.from({ length: 20 }, (_, i) => i + 1);
 
+const openGraveMap = (coords) => {
+  if (!coords || typeof coords !== 'string') return;
+  const match = coords.trim().match(/^(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)$/);
+  if (!match) return;
+  const url = `https://www.google.com/maps?q=${match[1]},${match[2]}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 export const normalizeSpouses = (member) => {
   if (!member) return Array.of();
   if (Array.isArray(member.spouses)) return member.spouses;
@@ -284,9 +292,12 @@ export default function MemberModals({
                           <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</div>
                           {sp.hometown && <div style={{ color: '#475569', marginTop: '2px' }}>• Quê quán / Xuất thân: {sp.hometown}</div>}
                           {sp.deathDate && <div style={{ color: '#b45309', marginTop: '2px' }}>• Ngày chánh kỵ: {sp.deathDate}</div>}
+                          {sp.graveCoords && (
+                            <div style={{ color: '#475569', marginTop: '4px' }}>• Địa chỉ lăng mộ: {sp.graveCoords}</div>
+                          )}
                           {sp.graveLocation && (
-                            <button type="button" onClick={() => onOpenMap({ title: `Mộ phần: ${sp.name}`, coords: sp.graveLocation })} style={{ marginTop: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer' }}>
-                              Xem bản đồ mộ phần ({sp.graveLocation})
+                            <button type="button" onClick={() => openGraveMap(sp.graveLocation)} style={{ marginTop: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer' }}>
+                              Xem bản đồ mộ phần
                             </button>
                           )}
                         </div>
@@ -300,10 +311,11 @@ export default function MemberModals({
                 {selected.graveLocation && selected.graveLocation.trim() !== '' && (
                   <div style={{ margin: '12px 0', padding: '12px', backgroundColor: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '8px' }}>
                     {selected.graveNote && <div style={{ fontSize: '13px', fontWeight: '700', color: '#065f46', marginBottom: '4px' }}>{selected.graveNote}</div>}
-                    <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '8px' }}><strong>Tọa độ GPS mộ phần:</strong> {selected.graveLocation}</div>
-                    <button type="button" onClick={() => onOpenMap({ title: `Vị trí lăng mộ: ${selected.name}`, coords: selected.graveLocation })} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: '600' }}>
+                    <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '6px' }}><strong>Tọa độ GPS mộ phần:</strong> {selected.graveLocation}</div>
+                    {selected.graveCoords && <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '8px' }}><strong>Địa chỉ lăng mộ:</strong> {selected.graveCoords}</div>}
+                    <button type="button" onClick={() => openGraveMap(selected.graveLocation)} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: '600' }}>
                       <MapPin size={15} />
-                      <span>Xem bản đồ & QR lăng mộ</span>
+                      <span>Xem bản đồ lăng mộ</span>
                     </button>
                   </div>
                 )}

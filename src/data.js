@@ -100,8 +100,17 @@ export const INITIAL_MEMBERS = [
   {
     id: 1, parentId: null, generation: 1, childOrder: 1,
     name: 'Lê Viết Ban', title: 'Ngài Thuỷ tổ', gender: 'Nam',
-    birthYear: 'Chưa rõ', deathDate: '12-11 ÂL', graveLocation: 'Xứ Cồn Cờ song hồn',
-    spouses: [{ name: 'Thuỷ tổ tỷ Nguyễn Thị Bông', role: 'Vợ chánh', deathDate: '05-11 ÂL', graveLocation: 'Xứ Cồn Cờ song hồn', note: 'Con gái Họ Nguyễn Ngọc ở làng' }],
+    birthYear: 'Chưa rõ', deathDate: '12-11 ÂL', 
+    graveLocation: '16.534091, 107.549184',
+    graveCoords: 'Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
+    spouses: [
+      { 
+        name: 'Thuỷ tổ tỷ Nguyễn Thị Bông', 
+        role: 'Vợ chánh', 
+        deathDate: '05-11 ÂL', 
+        graveLocation: '16.534091, 107.549184', 
+        graveCoords: 'Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
+        note: 'Con gái Họ Nguyễn Ngọc ở làng' }],
     bio: 'Ngài Thủy tổ họ Lê Viết tại làng Phú Ngạn.'
   },
 
@@ -317,7 +326,7 @@ export const INITIAL_MEMBERS = [
     name: 'Lê Viết Khanh', title: 'Viện Hàn Lâm', gender: 'Nam',
     birthYear: 'Chưa rõ', deathDate: '05-05 ÂL',
     graveLocation: '16.534267, 107.549503',
-    graveCoords: 'Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
+    graveCoords: 'Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
     motherName: 'Trần Thị Sàn',
     spouses: [
       {
@@ -325,7 +334,7 @@ export const INITIAL_MEMBERS = [
         role: 'Vợ chánh',
         deathDate: '03-05 ÂL',
         graveLocation: '16.534267, 107.549503',
-        graveCoords: 'Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
+        graveCoords: 'Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế',
         note: 'Con gái Họ Nguyễn làng Kim Đôi'
       },
       { name: 'Nguyễn Thị Các', role: 'Vợ thứ', note: 'Con gái làng Hương Cần, H. Hương Trà' }
