@@ -36,3 +36,10 @@
 ## Lưu ý kiểm thử
 
 Build/lint cần cài dependencies bằng `npm install`. Nếu mạng không ổn định, hãy thử lại trên máy cá nhân. Dữ liệu trong localStorage chỉ nằm trên trình duyệt/thiết bị đã lưu; website deploy không tạo kho dữ liệu dùng chung cho mọi người.
+
+
+## Cache trên Vercel
+
+- `vercel.json` yêu cầu trình duyệt và CDN kiểm tra lại trang `/` và `/index.html` mỗi lần truy cập, tránh giữ HTML cũ sau khi deploy.
+- Các file trong `/assets/` do Vite tạo có tên kèm hash nên được cache dài hạn an toàn.
+- Sau khi cập nhật, Vercel cần triển khai lại để áp dụng header mới.
