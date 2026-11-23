@@ -18,6 +18,84 @@ const readSavedData = () => {
   }
 };
 
+
+const validateMembers = (memberList) => {
+  const errors = [];
+  const warnings = [];
+  if (!Array.isArray(memberList) || memberList.length === 0) {
+    return { errors: ['Danh sách thành viên trống hoặc không hợp lệ.'], warnings: [] };
+  }
+
+  const idCounts = new Map();
+  memberList.forEach((member) => {
+    const id = String(member?.id ?? '').trim();
+    if (!id) errors.push(`Thành viên "${member?.name || '(chưa có tên)'}" thiếu mã ID.`);
+    idCounts.set(id, (idCounts.get(id) || 0) + 1);
+    if (!String(member?.name ?? '').trim()) errors.push(`ID ${id || '(trống)'} thiếu tên.`);
+    const generation = Number(member?.generation);
+    if (!Number.isInteger(generation) || generation < 1) errors.push(`${member?.name || id}: đời không hợp lệ (${member?.generation ?? 'trống'}).`);
+    if (member?.childOrder != null && member?.childOrder !== '' && (!Number.isInteger(Number(member.childOrder)) || Number(member.childOrder) < 1)) {
+      errors.push(`${member?.name || id}: thứ tự con không hợp lệ (${member.childOrder}).`);
+    }
+  });
+  idCounts.forEach((count, id) => {
+    if (id && count > 1) errors.push(`Mã ID ${id} bị trùng (${count} lần).`);
+  });
+
+  const ids = new Set(memberList.map((member) => String(member?.id ?? '').trim()).filter(Boolean));
+  memberList.forEach((member) => {
+    const id = String(member?.id ?? '').trim();
+    const parentId = member?.parentId;
+    if (parentId != null && String(parentId).trim() !== '') {
+      if (String(parentId) === id) errors.push(`${member.name || id} tự liên kết làm cha/mẹ của chính mình.`);
+      else if (!ids.has(String(parentId))) errors.push(`${member.name || id} có mã cha/mẹ ${parentId} không tồn tại.`);
+      else {
+        const parent = memberList.find((candidate) => String(candidate?.id) === String(parentId));
+        if (Number(member.generation) !== Number(parent?.generation) + 1) {
+          warnings.push(`${member.name || id}: đời ${member.generation} không khớp với đời của người cha/mẹ.`);
+        }
+      }
+    }
+  });
+
+  const parentMap = new Map(memberList.map((member) => [String(member?.id ?? ''), member?.parentId == null ? null : String(member.parentId)]));
+  memberList.forEach((member) => {
+    const startId = String(member?.id ?? '');
+    const seen = new Set();
+    let current = startId;
+    while (current != null && current !== '') {
+      if (seen.has(current)) {
+        errors.push(`Phát hiện vòng liên kết cha/mẹ tại ID ${startId}.`);
+        break;
+      }
+      seen.add(current);
+      current = parentMap.get(current) ?? null;
+    }
+  });
+
+  const childOrderGroups = new Map();
+  memberList.forEach((member) => {
+    if (member?.parentId == null || member?.childOrder == null) return;
+    const key = `${member.parentId}:${member.childOrder}`;
+    childOrderGroups.set(key, (childOrderGroups.get(key) || 0) + 1);
+  });
+  const duplicateChildOrders = [...childOrderGroups.entries()].filter(([, count]) => count > 1);
+  if (duplicateChildOrders.length) warnings.push(`${duplicateChildOrders.length} nhóm có thứ tự con bị trùng; cần đối chiếu.`);
+
+  const rootCount = memberList.filter((member) => member?.parentId == null || String(member.parentId).trim() === '').length;
+  if (rootCount !== 1) warnings.push(`Có ${rootCount} thành viên không có cha/mẹ được liên kết (thường nên có 1 người gốc).`);
+
+  const nameCounts = new Map();
+  memberList.forEach((member) => {
+    const name = String(member?.name ?? '').trim();
+    if (name) nameCounts.set(name, (nameCounts.get(name) || 0) + 1);
+  });
+  const duplicateNames = [...nameCounts.entries()].filter(([, count]) => count > 1);
+  if (duplicateNames.length) warnings.push(`${duplicateNames.length} tên trùng nhau; cần đối chiếu thủ công vì có thể là người khác nhau ở các nhánh/đời.`);
+
+  return { errors: [...new Set(errors)], warnings: [...new Set(warnings)] };
+};
+
 const GEN_COLORS = [
   '#991b1b', '#b45309', '#047857', '#1d4ed8',
   '#6d28d9', '#0f766e', '#be123c', '#4338ca'
@@ -45,7 +123,7 @@ export default function App() {
   const [treeViewMode, setTreeViewMode] = useState('LIST');
   const [treeZoom, setTreeZoom] = useState(0.85);
   const [treeExpandedIds, setTreeExpandedIds] = useState(() =>
-    INITIAL_MEMBERS.filter((m) => Number(m.generation) <= 3).map((m) => m.id)
+    (savedData?.members ?? INITIAL_MEMBERS).filter((m) => Number(m.generation) <= 3).map((m) => m.id)
   );
   const toggleTreeExpand = (id) => {
     setTreeExpandedIds((prev) =>
@@ -167,6 +245,22 @@ export default function App() {
       .replace(/đ/g, 'd')
       .trim();
 
+  const searchResultGroups = (() => {
+    const rawQuery = searchTerm.trim().toLocaleLowerCase();
+    const normalizedQuery = normalizeText(searchTerm);
+    if (!normalizedQuery) return { exact: [], accentVariants: [], extended: [], total: 0 };
+    const exact = members.filter((m) => String(m.name || '').trim().toLocaleLowerCase() === rawQuery);
+    const accentVariants = members.filter((m) => {
+      const name = String(m.name || '').trim();
+      return normalizeText(name) === normalizedQuery && name.toLocaleLowerCase() !== rawQuery;
+    });
+    const extended = members.filter((m) => {
+      const normalizedName = normalizeText(m.name);
+      return normalizedName.includes(normalizedQuery) && normalizedName !== normalizedQuery;
+    });
+    return { exact, accentVariants, extended, total: exact.length + accentVariants.length + extended.length };
+  })();
+
   const handleJumpToSearch = (nextStep = false) => {
     const query = normalizeText(searchTerm);
     if (!query) {
@@ -184,6 +278,7 @@ export default function App() {
 
     // Mở rộng toàn bộ cây để đảm bảo thẻ kết quả luôn hiển thị trên màn hình
     setExpandedIds(members.map((m) => m.id));
+    setTreeExpandedIds(members.map((m) => m.id));
 
     const targetIdx = nextStep ? (matchIndex + 1) % matchedList.length : 0;
     setMatchIndex(targetIdx);
@@ -199,7 +294,27 @@ export default function App() {
   };
 
   const handleSaveEdit = (updatedMember) => {
-    setMembers(members.map((m) => (m.id === updatedMember.id ? updatedMember : m)));
+    const parent = updatedMember.parentId == null || String(updatedMember.parentId).trim() === ''
+      ? null
+      : members.find((m) => String(m.id) === String(updatedMember.parentId));
+    if (updatedMember.parentId != null && String(updatedMember.parentId).trim() !== '' && !parent) {
+      alert('Không thể lưu: người cha/mẹ được chọn không tồn tại trong dữ liệu.');
+      return;
+    }
+    if (parent && Number(updatedMember.generation) !== Number(parent.generation) + 1) {
+      alert(`Không thể lưu: thành viên phải thuộc đời ${Number(parent.generation) + 1} theo liên kết cha/mẹ đang chọn.`);
+      return;
+    }
+    const candidate = members.map((m) => (m.id === updatedMember.id ? updatedMember : m));
+    const candidateReport = validateMembers(candidate);
+    const cycleOrSelfLink = candidateReport.errors.some((message) =>
+      message.includes('vòng liên kết') || message.includes('tự liên kết')
+    );
+    if (cycleOrSelfLink) {
+      alert('Không thể lưu: thay đổi này tạo liên kết cha/mẹ không hợp lệ.');
+      return;
+    }
+    setMembers(candidate);
     setSelected(updatedMember);
   };
 
@@ -215,8 +330,21 @@ export default function App() {
   };
 
   const handleAddMember = (newMember) => {
+    if (members.some((m) => String(m.id) === String(newMember.id))) {
+      alert('Không thể thêm: mã thành viên đã tồn tại.');
+      return;
+    }
+    const parent = newMember.parentId == null ? null : members.find((m) => String(m.id) === String(newMember.parentId));
+    if (newMember.parentId != null && !parent) {
+      alert('Không thể thêm: không tìm thấy người cha/mẹ được chọn.');
+      return;
+    }
+    if (parent && Number(newMember.generation) !== Number(parent.generation) + 1) {
+      alert(`Không thể thêm: thành viên phải thuộc đời ${Number(parent.generation) + 1} theo liên kết cha/mẹ.`);
+      return;
+    }
     setMembers(members.concat(newMember));
-    if (!expandedIds.includes(newMember.parentId)) {
+    if (newMember.parentId != null && !expandedIds.includes(newMember.parentId)) {
       setExpandedIds(expandedIds.concat(newMember.parentId));
     }
     setShowAdd(false);
@@ -225,6 +353,7 @@ export default function App() {
   const handleExportData = () => {
     const backup = {
       app: 'LeVietGiaPha',
+      schema: 'leviet-tocpho-backup',
       version: 1,
       exportedAt: new Date().toISOString(),
       members,
@@ -241,6 +370,21 @@ export default function App() {
     URL.revokeObjectURL(url);
   };
 
+  const handleValidateData = () => {
+    const report = validateMembers(members);
+    const lines = [
+      `RÀ SOÁT DỮ LIỆU GIA PHẢ`,
+      `Tổng số thành viên: ${members.length}`,
+      `Lỗi cần xử lý: ${report.errors.length}`,
+      `Cảnh báo cần đối chiếu: ${report.warnings.length}`,
+      '',
+      ...(report.errors.length ? ['LỖI:', ...report.errors.slice(0, 25).map((item) => `• ${item}`)] : ['Không phát hiện lỗi cấu trúc nghiêm trọng.']),
+      ...(report.warnings.length ? ['', 'CẢNH BÁO:', ...report.warnings.slice(0, 20).map((item) => `• ${item}`)] : ['Không có cảnh báo.']),
+    ];
+    if (report.errors.length > 25 || report.warnings.length > 20) lines.push('', 'Danh sách được rút gọn để hiển thị.');
+    alert(lines.join('\n'));
+  };
+
   const handleImportBackup = async (event) => {
     const file = event.target.files?.[0];
     event.target.value = '';
@@ -250,11 +394,18 @@ export default function App() {
       if (!Array.isArray(imported.members) || imported.members.length === 0) {
         throw new Error('File sao lưu không có danh sách thành viên hợp lệ.');
       }
-      const idSet = new Set(imported.members.map((m) => String(m.id)));
-      const duplicateIds = imported.members.some((m, i) => imported.members.findIndex((other) => String(other.id) === String(m.id)) !== i);
-      const invalid = duplicateIds || imported.members.some((m) => !m.name || (m.parentId != null && !idSet.has(String(m.parentId))));
-      if (invalid) throw new Error('Dữ liệu thành viên thiếu tên hoặc có liên kết cha không hợp lệ.');
-      if (!window.confirm(`Nhập ${imported.members.length} thành viên từ file sao lưu? Dữ liệu đang có sẽ được thay thế.`)) return;
+      for (const key of ['newsList', 'revisions', 'renovations']) {
+        if (imported[key] !== undefined && !Array.isArray(imported[key])) {
+          throw new Error(`Mục ${key} trong file sao lưu không đúng định dạng danh sách.`);
+        }
+      }
+      const report = validateMembers(imported.members);
+      if (report.errors.length) {
+        throw new Error(`File có ${report.errors.length} lỗi cấu trúc. ${report.errors.slice(0, 5).join(' ')}`);
+      }
+      const warningText = report.warnings.length ? `\n\nCảnh báo: ${report.warnings.slice(0, 3).join(' ')}` : '';
+      if (!window.confirm(`Nhập ${imported.members.length} thành viên từ file sao lưu? Dữ liệu hiện tại sẽ được thay thế. Một bản sao dữ liệu hiện tại sẽ được tải xuống trước khi nhập.${warningText}`)) return;
+      handleExportData();
       setMembers(imported.members);
       if (Array.isArray(imported.newsList)) setNewsList(imported.newsList);
       if (Array.isArray(imported.revisions)) setRevisions(imported.revisions);
@@ -439,13 +590,16 @@ export default function App() {
       const isMatched = searchTerm.trim() !== '' && normalizeText(member.name).includes(normalizeText(searchTerm));
 
       const cleanName = member.name.replace(/\(.*?\)/g, '').trim();
-      const displayTitle = genNum === 1 ? `Thủy tổ - ${cleanName}` : cleanName;
+      const displayTitle = genNum === 1 ? `${member.title || 'Ngài Thủy tổ'} - ${cleanName}` : cleanName;
       const verticalWords = displayTitle.split(/\s+/);
 
       return (
         <div
           id={`tree-node-${member.id}`}
+          role="button"
+          tabIndex={0}
           onClick={() => setSelected(member)}
+          onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelected(member); } }}
           title={`${member.name} (Đời thứ ${member.generation}) - Bấm để xem chi tiết`}
           style={{
             backgroundColor: isMatched ? '#fef3c7' : genNum === 1 ? '#7c1d1d' : isFemale ? '#fff1f2' : '#ffffff',
@@ -495,13 +649,13 @@ export default function App() {
       const children = getChildren(parent.id);
       if (children.length === 0) return null;
 
-      const isParentExpanded = treeExpandedIds.includes(parent.id) || searchTerm.trim() !== '';
+      const isParentExpanded = treeExpandedIds.includes(parent.id);
       if (!isParentExpanded) return null;
 
       const hasAnyGrandChild = children.some((c) => getChildren(c.id).length > 0);
       const isLeafCluster = children.length > 5 && !hasAnyGrandChild;
       const activeSubParents = children.filter(
-        (c) => getChildren(c.id).length > 0 && (treeExpandedIds.includes(c.id) || searchTerm.trim() !== '')
+        (c) => getChildren(c.id).length > 0 && (treeExpandedIds.includes(c.id))
       );
 
       return (
@@ -523,7 +677,7 @@ export default function App() {
                 const isLast = index === children.length - 1;
                 const isOnly = children.length === 1;
                 const childKids = getChildren(child.id);
-                const isChildExpanded = treeExpandedIds.includes(child.id) || searchTerm.trim() !== '';
+                const isChildExpanded = treeExpandedIds.includes(child.id);
 
                 return (
                   <div key={child.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', padding: Number(child.generation) <= 3 ? '0 4px' : '0 1.5px' }}>
@@ -592,7 +746,7 @@ export default function App() {
     };
 
     const rootKids = getChildren(rootMember.id);
-    const isRootExpanded = treeExpandedIds.includes(rootMember.id) || searchTerm.trim() !== '';
+    const isRootExpanded = treeExpandedIds.includes(rootMember.id);
 
     return (
       <div key={rootMember.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -640,7 +794,7 @@ export default function App() {
       <div style={{ marginLeft: level === 0 ? '0px' : '12px', borderLeft: level === 0 ? 'none' : '2px dashed #fcd34d', paddingLeft: level === 0 ? '0px' : '4px' }}>
         {children.map((m) => {
         const subChildren = members.filter((c) => c.parentId === m.id);
-        const isExpanded = searchTerm.trim() !== '' || expandedIds.includes(m.id);
+        const isExpanded = expandedIds.includes(m.id);
 
           return (
             <div key={m.id} style={{ marginTop: '5px' }}>
@@ -655,7 +809,7 @@ export default function App() {
 
   const filteredByGen = members.filter((m) => {
     const matchGen = filterGen === 'ALL' || String(m.generation) === filterGen;
-    const matchName = !searchTerm || m.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchName = !searchTerm || normalizeText(m.name).includes(normalizeText(searchTerm));
     return matchGen && matchName;
   });
   return (
@@ -681,6 +835,9 @@ export default function App() {
           </div>
 
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <button type="button" onClick={handleValidateData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
+              <BookOpen size={16} /> Rà soát dữ liệu
+            </button>
             <button type="button" onClick={handleExportData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
               <Download size={16} /> Sao lưu dữ liệu
             </button>
@@ -932,6 +1089,15 @@ export default function App() {
               </button>
             </div>
 
+            {searchTerm.trim() !== '' && searchResultGroups.total > 0 && (
+              <div style={{ margin: '0 0 12px', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '9px', background: '#f8fafc', fontSize: '13px', color: '#334155' }}>
+                <div style={{ fontWeight: 700, marginBottom: '6px' }}>Tìm thấy {searchResultGroups.total} thành viên phù hợp</div>
+                {searchResultGroups.exact.length > 0 && <div><strong>Khớp chính xác:</strong> {searchResultGroups.exact.map((m) => m.name).join(', ')}</div>}
+                {searchResultGroups.accentVariants.length > 0 && <div style={{ marginTop: '4px' }}><strong>Khớp gần (khác dấu/cách viết):</strong> {searchResultGroups.accentVariants.map((m) => m.name).join(', ')}</div>}
+                {searchResultGroups.extended.length > 0 && <div style={{ marginTop: '4px' }}><strong>Tên có chứa cụm tìm kiếm:</strong> {searchResultGroups.extended.map((m) => m.name).join(', ')}</div>}
+              </div>
+            )}
+
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '12px', paddingBottom: '12px', borderBottom: '1px solid #e2e8f0' }}>
               <div>
                 <h2 style={{ margin: '0 0 4px 0', fontSize: '18px', color: '#7c1d1d' }}>
@@ -1034,6 +1200,13 @@ export default function App() {
                     </span>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        onClick={() => setTreeExpandedIds([])}
+                        style={{ padding: '4px 9px', borderRadius: '6px', border: '1px solid #cbd5e1', backgroundColor: '#ffffff', fontSize: '12px', fontWeight: '600', cursor: 'pointer', color: '#334155' }}
+                      >
+                        Thu gọn hết
+                      </button>
                       <button
                         type="button"
                         onClick={() => setTreeExpandedIds(members.filter((m) => Number(m.generation) <= 3).map((m) => m.id))}
