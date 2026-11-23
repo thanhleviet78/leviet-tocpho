@@ -9,10 +9,28 @@ import './App.css';
 const GENERATION_LIST = Array.from({ length: 20 }, (_, i) => i + 1);
 
 const STORAGE_KEY = 'le-viet-gia-pha-v1';
+const isGps = (value) => typeof value === 'string' && /^\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*$/.test(value);
+const normalizeGraveRecord = (record) => {
+  if (!record || typeof record !== 'object') return record;
+  const oldLocation = record.graveLocation || '';
+  const oldCoords = record.graveCoords || '';
+  // Legacy schema stored GPS in graveLocation and place description in graveCoords.
+  if (isGps(oldLocation)) {
+    return { ...record, graveLocation: oldCoords && !isGps(oldCoords) ? oldCoords : '', graveCoords: oldLocation };
+  }
+  if (isGps(oldCoords)) return { ...record, graveLocation: oldLocation, graveCoords: oldCoords };
+  return { ...record, graveLocation: oldLocation, graveCoords: '' };
+};
+const normalizeMemberGraves = (list) => (Array.isArray(list) ? list.map((m) => ({
+  ...normalizeGraveRecord(m),
+  spouses: Array.isArray(m.spouses) ? m.spouses.map(normalizeGraveRecord) : m.spouses
+})) : list);
+const normalizeSavedData = (saved) => saved && Array.isArray(saved.members) ? { ...saved, members: normalizeMemberGraves(saved.members) } : saved;
+
 const readSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+    return raw ? normalizeSavedData(JSON.parse(raw)) : null;
   } catch {
     return null;
   }
@@ -117,13 +135,13 @@ return (
 export default function App() {
   const [activeTab, setActiveTab] = useState('GIA_PHA'); // Mặc định mở mục Gia phả (có thể đổi thành 'TRANG_CHU')
   const [savedData] = useState(readSavedData);
-  const [members, setMembers] = useState(() => savedData?.members ?? INITIAL_MEMBERS);
+  const [members, setMembers] = useState(() => normalizeMemberGraves(savedData?.members ?? INITIAL_MEMBERS));
   const [searchTerm, setSearchTerm] = useState('');
   const [filterGen, setFilterGen] = useState('ALL');
   const [treeViewMode, setTreeViewMode] = useState('LIST');
   const [treeZoom, setTreeZoom] = useState(0.85);
   const [treeExpandedIds, setTreeExpandedIds] = useState(() =>
-    (savedData?.members ?? INITIAL_MEMBERS).filter((m) => Number(m.generation) <= 3).map((m) => m.id)
+    normalizeMemberGraves(savedData?.members ?? INITIAL_MEMBERS).filter((m) => Number(m.generation) <= 3).map((m) => m.id)
   );
   const toggleTreeExpand = (id) => {
     setTreeExpandedIds((prev) =>

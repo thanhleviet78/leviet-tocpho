@@ -3,11 +3,21 @@ import { X, MapPin, Edit3, Plus, Trash2 } from 'lucide-react';
 
 const GENERATION_LIST = Array.from({ length: 20 }, (_, i) => i + 1);
 
+const isGps = (value) => typeof value === 'string' && /^\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*$/.test(value);
+const normalizeGraveRecord = (record) => {
+  if (!record) return record;
+  const oldLocation = record.graveLocation || '';
+  const oldCoords = record.graveCoords || '';
+  if (isGps(oldLocation)) return { ...record, graveLocation: oldCoords && !isGps(oldCoords) ? oldCoords : '', graveCoords: oldLocation };
+  if (isGps(oldCoords)) return { ...record, graveLocation: oldLocation, graveCoords: oldCoords };
+  return { ...record, graveLocation: oldLocation, graveCoords: '' };
+};
+
 export const normalizeSpouses = (member) => {
   if (!member) return Array.of();
   if (Array.isArray(member.spouses)) return member.spouses;
   if (member.spouse && member.spouse.trim() !== '') {
-    return Array.of({ role: 'Vợ chánh', name: member.spouse, hometown: '', deathDate: '', graveLocation: '' });
+    return Array.of({ role: 'Vợ chánh', name: member.spouse, hometown: '', deathDate: '', graveLocation: '', graveCoords: '' });
   }
   return Array.of();
 };
@@ -26,13 +36,13 @@ export default function MemberModals({
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState(null);
 
-  const emptySpouse = { role: 'Vợ chánh', name: '', hometown: '', deathDate: '', graveLocation: '' };
+  const emptySpouse = { role: 'Vợ chánh', name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' };
 
   const [form, setForm] = useState({
     name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '',
     deathDate: 'Còn sống', spouses: Array.of({ ...emptySpouse }), avatar: '',
     address: 'Làng Phú Ngạn, xã Quảng Thành (TDP Tây Phú, phường Hóa Châu, TP.Huế)',
-    graveLocation: '', graveNote: '', parentId: 1, motherName: '', bio: ''
+    graveLocation: '', graveCoords: '', graveNote: '', parentId: 1, motherName: '', bio: ''
   });
 
   useEffect(() => {
@@ -44,20 +54,20 @@ export default function MemberModals({
 
   const handleStartEdit = () => {
     const currentSpouses = normalizeSpouses(selected).map((sp) => ({
-      ...sp,
+      ...normalizeGraveRecord(sp),
       hometown: cleanPlaceholder(sp.hometown),
       deathDate: cleanPlaceholder(sp.deathDate),
-      graveLocation: cleanPlaceholder(sp.graveLocation)
+      graveLocation: cleanPlaceholder(sp.graveLocation),
+      graveCoords: cleanPlaceholder(sp.graveCoords)
     }));
 
     setEditForm({
-      ...selected,
+      ...normalizeGraveRecord(selected),
       childOrder: selected.childOrder ?? '',
       motherName: cleanPlaceholder(selected.motherName),
       birthYear: cleanPlaceholder(selected.birthYear),
       deathDate: cleanPlaceholder(selected.deathDate),
       address: cleanPlaceholder(selected.address),
-      graveLocation: cleanPlaceholder(selected.graveLocation),
       graveNote: cleanPlaceholder(selected.graveNote),
       bio: cleanPlaceholder(selected.bio),
       spouses: currentSpouses.length > 0 ? currentSpouses : Array.of({ ...emptySpouse })
@@ -69,7 +79,7 @@ export default function MemberModals({
     const order = editForm.spouses.length + 1;
     setEditForm({
       ...editForm,
-      spouses: editForm.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '' })
+      spouses: editForm.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -103,7 +113,7 @@ export default function MemberModals({
     const order = form.spouses.length + 1;
     setForm({
       ...form,
-      spouses: form.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '' })
+      spouses: form.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -133,7 +143,7 @@ export default function MemberModals({
       name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '',
       deathDate: 'Còn sống', spouses: Array.of({ ...emptySpouse }), avatar: '',
       address: 'Làng Phú Ngạn, xã Quảng Thành (TDP Tây Phú, phường Hóa Châu, TP.Huế)',
-      graveLocation: '', graveNote: '', parentId: 1, motherName: '', bio: ''
+      graveLocation: '', graveCoords: '', graveNote: '', parentId: 1, motherName: '', bio: ''
     });
   };
 
@@ -211,7 +221,8 @@ export default function MemberModals({
                     <label>Ngày chánh kỵ (giỗ)<input placeholder="VD: 12-11 Âm lịch hoặc Còn sống" value={editForm.deathDate} onChange={(e) => setEditForm({ ...editForm, deathDate: e.target.value })} /></label>
                   </div>
                   <label>Quê quán / Nơi ở<input placeholder="VD: Làng Phú Ngạn, xã Quảng Thành..." value={editForm.address} onChange={(e) => setEditForm({ ...editForm, address: e.target.value })} /></label>
-                  <label>Tọa độ GPS lăng mộ<input placeholder="VD: 16.541200, 107.561500" value={editForm.graveLocation} onChange={(e) => setEditForm({ ...editForm, graveLocation: e.target.value })} /></label>
+                  <label>Địa chỉ lăng mộ<input placeholder="Địa danh / địa chỉ mộ" value={editForm.graveLocation || ''} onChange={(e) => setEditForm({ ...editForm, graveLocation: e.target.value })} /></label>
+                  <label>Tọa độ GPS lăng mộ<input placeholder="VD: 16.541200, 107.561500" value={editForm.graveCoords || ''} onChange={(e) => setEditForm({ ...editForm, graveCoords: e.target.value })} /></label>
                   <label>Ghi chú lăng mộ<input placeholder="VD: Mộ tại xứ Cồn Cờ song hồn..." value={editForm.graveNote} onChange={(e) => setEditForm({ ...editForm, graveNote: e.target.value })} /></label>
                 </div>
 
@@ -240,7 +251,8 @@ export default function MemberModals({
                       <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleEditUpdateSpouse(idx, 'hometown', e.target.value)} />
                       <div className="form-row">
                         <input placeholder="Ngày chánh kỵ" value={sp.deathDate} onChange={(e) => handleEditUpdateSpouse(idx, 'deathDate', e.target.value)} />
-                        <input placeholder="Tọa độ mộ phần vợ" value={sp.graveLocation || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'graveLocation', e.target.value)} />
+                        <input placeholder="Địa chỉ mộ phần vợ" value={sp.graveLocation || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'graveLocation', e.target.value)} />
+                        <input placeholder="Tọa độ GPS mộ phần vợ" value={sp.graveCoords || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'graveCoords', e.target.value)} />
                       </div>
                     </div>
                   ))}
@@ -284,11 +296,11 @@ export default function MemberModals({
                           <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</div>
                           {sp.hometown && <div style={{ color: '#475569', marginTop: '2px' }}>• Quê quán / Xuất thân: {sp.hometown}</div>}
                           {sp.deathDate && <div style={{ color: '#b45309', marginTop: '2px' }}>• Ngày chánh kỵ: {sp.deathDate}</div>}
-                          {sp.graveCoords && (
-                            <div style={{ color: '#475569', marginTop: '4px' }}>• Địa chỉ lăng mộ: {sp.graveCoords}</div>
-                          )}
                           {sp.graveLocation && (
-                            <a href={`https://www.google.com/maps?q=${encodeURIComponent(sp.graveLocation.trim())}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', marginTop: '6px', backgroundColor: '#059669', color: '#fff', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer', textDecoration: 'none' }}>
+                            <div style={{ color: '#475569', marginTop: '4px' }}>• Địa chỉ lăng mộ: {sp.graveLocation}</div>
+                          )}
+                          {sp.graveCoords && (
+                            <a href={`https://www.google.com/maps?q=${encodeURIComponent(sp.graveCoords.trim())}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', marginTop: '6px', backgroundColor: '#059669', color: '#fff', borderRadius: '4px', padding: '4px 8px', fontSize: '11px', cursor: 'pointer', textDecoration: 'none' }}>
                               Xem bản đồ mộ phần
                             </a>
                           )}
@@ -300,15 +312,15 @@ export default function MemberModals({
                   )}
                 </div>
 
-                {selected.graveLocation && selected.graveLocation.trim() !== '' && (
+                {(selected.graveLocation || selected.graveCoords) && (
                   <div style={{ margin: '12px 0', padding: '12px', backgroundColor: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '8px' }}>
                     {selected.graveNote && <div style={{ fontSize: '13px', fontWeight: '700', color: '#065f46', marginBottom: '4px' }}>{selected.graveNote}</div>}
-                    <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '6px' }}><strong>Tọa độ GPS mộ phần:</strong> {selected.graveLocation}</div>
-                    {selected.graveCoords && <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '8px' }}><strong>Địa chỉ lăng mộ:</strong> {selected.graveCoords}</div>}
-                    <a href={`https://www.google.com/maps?q=${encodeURIComponent(selected.graveLocation.trim())}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: '600', textDecoration: 'none' }}>
+                    {selected.graveLocation && <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '6px' }}><strong>Địa chỉ lăng mộ:</strong> {selected.graveLocation}</div>}
+                    {selected.graveCoords && <div style={{ fontSize: '13px', color: '#065f46', marginBottom: '8px' }}><strong>Tọa độ GPS:</strong> {selected.graveCoords}</div>}
+                    {selected.graveCoords && <a href={`https://www.google.com/maps?q=${encodeURIComponent(selected.graveCoords.trim())}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#059669', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: '600', textDecoration: 'none' }}>
                       <MapPin size={15} />
                       <span>Xem bản đồ lăng mộ</span>
-                    </a>
+                    </a>}
                   </div>
                 )}
 
@@ -398,7 +410,8 @@ export default function MemberModals({
                   <label>Ngày chánh kỵ (giỗ)<input value={form.deathDate} onChange={(e) => setForm({ ...form, deathDate: e.target.value })} /></label>
                 </div>
                 <label>Quê quán / Nơi ở<input value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} /></label>
-                <label>Tọa độ GPS lăng mộ<input value={form.graveLocation} onChange={(e) => setForm({ ...form, graveLocation: e.target.value })} /></label>
+                <label>Địa chỉ lăng mộ<input placeholder="Địa danh / địa chỉ mộ" value={form.graveLocation} onChange={(e) => setForm({ ...form, graveLocation: e.target.value })} /></label>
+                <label>Tọa độ GPS lăng mộ<input placeholder="VD: 16.541200, 107.561500" value={form.graveCoords} onChange={(e) => setForm({ ...form, graveCoords: e.target.value })} /></label>
                 <label>Ghi chú lăng mộ<input value={form.graveNote} onChange={(e) => setForm({ ...form, graveNote: e.target.value })} /></label>
               </div>
 
@@ -427,7 +440,8 @@ export default function MemberModals({
                     <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleUpdateSpouse(idx, 'hometown', e.target.value)} />
                     <div className="form-row">
                       <input placeholder="Ngày chánh kỵ" value={sp.deathDate} onChange={(e) => handleUpdateSpouse(idx, 'deathDate', e.target.value)} />
-                      <input placeholder="Tọa độ mộ phần vợ" value={sp.graveLocation || ''} onChange={(e) => handleUpdateSpouse(idx, 'graveLocation', e.target.value)} />
+                      <input placeholder="Địa chỉ mộ phần vợ" value={sp.graveLocation || ''} onChange={(e) => handleUpdateSpouse(idx, 'graveLocation', e.target.value)} />
+                        <input placeholder="Tọa độ GPS mộ phần vợ" value={sp.graveCoords || ''} onChange={(e) => handleUpdateSpouse(idx, 'graveCoords', e.target.value)} />
                     </div>
                   </div>
                 ))}
