@@ -147,7 +147,7 @@ export default function MemberModals({
     });
   };
 
-  const selectedChildren = selected ? members.filter((m) => m.parentId === selected.id) : Array.of();
+  const selectedChildren = selected ? members.filter((m) => m.parentId === selected.id).sort((a, b) => Number(a.childOrder ?? 999) - Number(b.childOrder ?? 999) || Number(a.id) - Number(b.id)) : Array.of();
   const editParentSpouses = editForm ? normalizeSpouses(members.find((m) => m.id === Number(editForm.parentId))) : Array.of();
   const addParentSpouses = normalizeSpouses(members.find((m) => m.id === Number(form.parentId)));
   return (

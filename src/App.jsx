@@ -805,13 +805,23 @@ export default function App() {
 
 
   const renderVerticalTree = (parentId = null, level = 0) => {
-    const children = members.filter((m) => m.parentId === parentId);
+    // Sort by explicit childOrder so records added later (e.g. child #12)
+    // cannot jump ahead of #8–#11 in the displayed genealogy list.
+    const children = members
+      .filter((m) => m.parentId === parentId)
+      .sort((a, b) => {
+        const orderA = Number(a.childOrder ?? 999);
+        const orderB = Number(b.childOrder ?? 999);
+        return orderA - orderB;
+      });
     if (!children.length) return null;
 
     return (
       <div style={{ marginLeft: level === 0 ? '0px' : '12px', borderLeft: level === 0 ? 'none' : '2px dashed #fcd34d', paddingLeft: level === 0 ? '0px' : '4px' }}>
         {children.map((m) => {
-        const subChildren = members.filter((c) => c.parentId === m.id);
+        const subChildren = members
+          .filter((c) => c.parentId === m.id)
+          .sort((a, b) => Number(a.childOrder ?? 999) - Number(b.childOrder ?? 999) || Number(a.id) - Number(b.id));
         const isExpanded = expandedIds.includes(m.id);
 
           return (
@@ -1275,7 +1285,7 @@ export default function App() {
             </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {filteredByGen.map((m) => renderMemberCard(m, members.filter((c) => c.parentId === m.id), false))}
+              {filteredByGen.map((m) => renderMemberCard(m, members.filter((c) => c.parentId === m.id).sort((a, b) => Number(a.childOrder ?? 999) - Number(b.childOrder ?? 999) || Number(a.id) - Number(b.id)), false))}
               </div>
             )}
           </main>
