@@ -7,7 +7,8 @@ export default function NewsModals({
   onSaveNews,
   onDeleteNews,
   showAddNews,
-  onCloseAddNews
+  onCloseAddNews,
+  readOnly = false
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [form, setForm] = useState({
@@ -78,7 +79,7 @@ export default function NewsModals({
                 {isEditing ? 'Chỉnh Sửa Bài Viết' : 'Chi Tiết Tin Tức & Sự Kiện'}
               </h3>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                {!isEditing && (
+                {!isEditing && !readOnly && (
                   <button
                     type="button"
                     onClick={() => setIsEditing(true)}
@@ -258,7 +259,7 @@ export default function NewsModals({
       )}
 
       {/* 2. CỬA SỔ ĐĂNG BÀI VIẾT MỚI */}
-      {showAddNews && (
+      {!readOnly && showAddNews && (
         <div className="modal-bg">
           <div className="modal" style={{ maxWidth: '640px' }}>
             <div className="modal-head">

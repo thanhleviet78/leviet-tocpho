@@ -31,7 +31,8 @@ export default function MemberModals({
   showAdd,
   onCloseAdd,
   onAddMember,
-  onOpenMap
+  onOpenMap,
+  readOnly = false
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState(null);
@@ -53,6 +54,7 @@ export default function MemberModals({
     const cleanPlaceholder = (val) => (!val || val === 'Chưa rõ' || val === 'Chưa cập nhật' ? '' : val);
 
   const handleStartEdit = () => {
+    if (readOnly) return;
     const currentSpouses = normalizeSpouses(selected).map((sp) => ({
       ...normalizeGraveRecord(sp),
       hometown: cleanPlaceholder(sp.hometown),
@@ -158,7 +160,7 @@ export default function MemberModals({
             <div className="modal-head">
               <h3 style={{ margin: 0, color: '#7c1d1d' }}>{isEditing ? 'Chỉnh Sửa Thông Tin Gia Đình' : 'Hồ Sơ Thành Viên'}</h3>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                {!isEditing && (
+                {!isEditing && !readOnly && (
                   <button type="button" onClick={handleStartEdit} style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', backgroundColor: '#fef3c7', color: '#92400e', border: '1px solid #f59e0b', padding: '5px 10px', borderRadius: '6px', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}>
                     <Edit3 size={14} /> Sửa thông tin
                   </button>
@@ -355,7 +357,7 @@ export default function MemberModals({
           </div>
         </div>
       )}
-      {showAdd && (
+      {!readOnly && showAdd && (
         <div className="modal-bg">
           <div className="modal" style={{ maxWidth: '560px' }}>
             <div className="modal-head">

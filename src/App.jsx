@@ -9,6 +9,10 @@ import './App.css';
 const GENERATION_LIST = Array.from({ length: 20 }, (_, i) => i + 1);
 
 const STORAGE_KEY = 'le-viet-gia-pha-v1';
+// Chỉ máy quản lý chạy localhost mới được đọc/ghi dữ liệu riêng trong Local Storage.
+// Website công khai luôn dùng dữ liệu đóng gói trong src/data.js của Deployment.
+const IS_LOCAL_ADMIN = typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 const isGps = (value) => typeof value === 'string' && /^\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*$/.test(value);
 const normalizeGraveRecord = (record) => {
   if (!record || typeof record !== 'object') return record;
@@ -28,6 +32,7 @@ const normalizeMemberGraves = (list) => (Array.isArray(list) ? list.map((m) => (
 const normalizeSavedData = (saved) => saved && Array.isArray(saved.members) ? { ...saved, members: normalizeMemberGraves(saved.members) } : saved;
 
 const readSavedData = () => {
+  if (!IS_LOCAL_ADMIN) return null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     return raw ? normalizeSavedData(JSON.parse(raw)) : null;
@@ -190,6 +195,7 @@ export default function App() {
   const [renovations, setRenovations] = useState(() => savedData?.renovations ?? TEMPLE_RENOVATIONS);
 
   useEffect(() => {
+    if (!IS_LOCAL_ADMIN) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ members, newsList, revisions, renovations, savedAt: new Date().toISOString() }));
     } catch (error) {
@@ -862,6 +868,7 @@ export default function App() {
             </div>
           </div>
 
+          {IS_LOCAL_ADMIN && (
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             <button type="button" onClick={handleValidateData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
               <BookOpen size={16} /> Rà soát dữ liệu
@@ -874,6 +881,7 @@ export default function App() {
               <input type="file" accept=".json,application/json" onChange={handleImportBackup} style={{ display: 'none' }} />
             </label>
           </div>
+          )}
         </div>
 
         <div className="banner-sub-row">
@@ -920,11 +928,13 @@ export default function App() {
 
           <ScrollDivider title="Tin Tức & Sự Kiện Lễ Hội Hằng Năm" />
 
-          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '12px' }}>
-            <button type="button" onClick={() => setShowAddNews(true)} className="btn-primary">
-            + Đăng bài viết mới
-            </button>
-          </div>
+          {IS_LOCAL_ADMIN && (
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '12px' }}>
+              <button type="button" onClick={() => setShowAddNews(true)} className="btn-primary">
+                + Đăng bài viết mới
+              </button>
+            </div>
+          )}
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '18px' }}>
             {newsList.map((news) => (
@@ -1112,9 +1122,11 @@ export default function App() {
                 </div>
               </div>
 
-              <button type="button" onClick={() => setShowAdd(true)} className="btn-primary">
-              <UserPlus size={18} /> Thêm thành viên
-              </button>
+              {IS_LOCAL_ADMIN && (
+                <button type="button" onClick={() => setShowAdd(true)} className="btn-primary">
+                  <UserPlus size={18} /> Thêm thành viên
+                </button>
+              )}
             </div>
 
             {searchTerm.trim() !== '' && searchResultGroups.total > 0 && (
@@ -1325,7 +1337,7 @@ export default function App() {
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
-                <button
+                {IS_LOCAL_ADMIN && <button
                   type="button"
                   onClick={openAddRevision}
                   style={{
@@ -1340,19 +1352,19 @@ export default function App() {
                   }}
                 >
                   + Thêm
-                </button>
+                </button>}
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {revisions.map((rev, index) => (
                   <div
                     key={rev.id}
-                    onClick={() => openEditRevision(rev)}
-                    style={{ padding: '10px 12px', backgroundColor: '#fef2f2', borderRadius: '8px', borderLeft: '4px solid #991b1b', fontSize: '13px', lineHeight: '1.5', cursor: 'pointer' }}
+                    onClick={() => IS_LOCAL_ADMIN && openEditRevision(rev)}
+                    style={{ padding: '10px 12px', backgroundColor: '#fef2f2', borderRadius: '8px', borderLeft: '4px solid #991b1b', fontSize: '13px', lineHeight: '1.5', cursor: IS_LOCAL_ADMIN ? 'pointer' : 'default' }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
                       <span style={{ fontWeight: '700', color: '#7c1d1d' }}>{index + 1}. Phụng tu: {rev.date}</span>
-                      <span style={{ fontSize: '11px', color: '#b45309', fontWeight: '600' }}>Sửa →</span>
+                      {IS_LOCAL_ADMIN && <span style={{ fontSize: '11px', color: '#b45309', fontWeight: '600' }}>Sửa →</span>}
                     </div>
                     <div style={{ color: '#334155', marginTop: '2px' }}>Người thực hiện: <strong>{rev.author}</strong></div>
                   </div>
@@ -1369,7 +1381,7 @@ export default function App() {
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
-                <button
+                {IS_LOCAL_ADMIN && <button
                   type="button"
                   onClick={openAddRenovation}
                   style={{
@@ -1384,22 +1396,22 @@ export default function App() {
                   }}
                 >
                   + Thêm
-                </button>
+                </button>}
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {renovations.map((item) => (
                   <div
                     key={item.id}
-                    onClick={() => openEditRenovation(item)}
+                    onClick={() => IS_LOCAL_ADMIN && openEditRenovation(item)}
                     className="memorial-item"
-                    style={{ position: 'relative' }}
+                    style={{ position: 'relative', cursor: IS_LOCAL_ADMIN ? 'pointer' : 'default' }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '6px' }}>
                       <span style={{ fontSize: '12px', fontWeight: '700', color: '#991b1b', backgroundColor: '#fef2f2', padding: '2px 8px', borderRadius: '4px' }}>
                         {item.year}
                       </span>
-                      <span style={{ fontSize: '11px', color: '#b45309', fontWeight: '600' }}>Sửa →</span>
+                      {IS_LOCAL_ADMIN && <span style={{ fontSize: '11px', color: '#b45309', fontWeight: '600' }}>Sửa →</span>}
                     </div>
                     <div style={{ fontWeight: '700', color: '#0f172a', marginTop: '6px', fontSize: '14px' }}>{item.title}</div>
                     {item.detail && (
@@ -1488,6 +1500,7 @@ export default function App() {
         onCloseAdd={() => setShowAdd(false)}
         onAddMember={handleAddMember}
         onOpenMap={setMapModal}
+        readOnly={!IS_LOCAL_ADMIN}
       />
 
       <NewsModals
@@ -1497,9 +1510,10 @@ export default function App() {
         onDeleteNews={handleDeleteNews}
         showAddNews={showAddNews}
         onCloseAddNews={() => setShowAddNews(false)}
+        readOnly={!IS_LOCAL_ADMIN}
       />
 
-      {revisionModal && (
+      {IS_LOCAL_ADMIN && revisionModal && (
         <div className="modal-bg">
           <div className="modal" style={{ maxWidth: '460px' }}>
             <div className="modal-head">
@@ -1551,7 +1565,7 @@ export default function App() {
         </div>
       )}
 
-      {renovationModal && (
+      {IS_LOCAL_ADMIN && renovationModal && (
         <div className="modal-bg">
           <div className="modal" style={{ maxWidth: '480px' }}>
             <div className="modal-head">
