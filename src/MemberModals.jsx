@@ -17,7 +17,7 @@ export const normalizeSpouses = (member) => {
   if (!member) return Array.of();
   if (Array.isArray(member.spouses)) return member.spouses;
   if (member.spouse && member.spouse.trim() !== '') {
-    return Array.of({ role: 'Vợ chánh', name: member.spouse, hometown: '', deathDate: '', graveLocation: '', graveCoords: '' });
+    return Array.of({ role: 'Vợ chánh', name: member.spouse, birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' });
   }
   return Array.of();
 };
@@ -37,7 +37,7 @@ export default function MemberModals({
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState(null);
 
-  const emptySpouse = { role: 'Vợ chánh', name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' };
+  const emptySpouse = { role: 'Vợ chánh', name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' };
 
   const [form, setForm] = useState({
     name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '',
@@ -57,6 +57,7 @@ export default function MemberModals({
     if (readOnly) return;
     const currentSpouses = normalizeSpouses(selected).map((sp) => ({
       ...normalizeGraveRecord(sp),
+      birthYear: cleanPlaceholder(sp.birthYear),
       hometown: cleanPlaceholder(sp.hometown),
       deathDate: cleanPlaceholder(sp.deathDate),
       graveLocation: cleanPlaceholder(sp.graveLocation),
@@ -81,7 +82,7 @@ export default function MemberModals({
     const order = editForm.spouses.length + 1;
     setEditForm({
       ...editForm,
-      spouses: editForm.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
+      spouses: editForm.spouses.concat({ role: `Vợ thứ ${order}`, name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -115,7 +116,7 @@ export default function MemberModals({
     const order = form.spouses.length + 1;
     setForm({
       ...form,
-      spouses: form.spouses.concat({ role: `Vợ thứ ${order}`, name: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
+      spouses: form.spouses.concat({ role: `Vợ thứ ${order}`, name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -249,6 +250,7 @@ export default function MemberModals({
                       <div className="form-row">
                         <input placeholder="Vai vế" value={sp.role} onChange={(e) => handleEditUpdateSpouse(idx, 'role', e.target.value)} />
                         <input placeholder="Họ và tên vợ / chồng" value={sp.name} onChange={(e) => handleEditUpdateSpouse(idx, 'name', e.target.value)} />
+                        <input placeholder="Năm sinh" value={sp.birthYear || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'birthYear', e.target.value)} />
                       </div>
                       <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleEditUpdateSpouse(idx, 'hometown', e.target.value)} />
                       <div className="form-row">
@@ -296,6 +298,7 @@ export default function MemberModals({
                       {normalizeSpouses(selected).map((sp, i) => (
                         <div key={i} style={{ padding: '10px 12px', backgroundColor: '#fffbeb', borderRadius: '8px', borderLeft: '3px solid #d97706', fontSize: '13px' }}>
                           <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</div>
+                          {sp.birthYear && <div style={{ color: '#475569', marginTop: '2px' }}>• Năm sinh: {sp.birthYear}</div>}
                           {sp.hometown && <div style={{ color: '#475569', marginTop: '2px' }}>• Quê quán / Xuất thân: {sp.hometown}</div>}
                           {sp.deathDate && <div style={{ color: '#b45309', marginTop: '2px' }}>• Ngày chánh kỵ: {sp.deathDate}</div>}
                           {sp.graveLocation && (
@@ -438,6 +441,7 @@ export default function MemberModals({
                     <div className="form-row">
                       <input placeholder="Vai vế" value={sp.role} onChange={(e) => handleUpdateSpouse(idx, 'role', e.target.value)} />
                       <input placeholder="Họ và tên vợ / chồng" value={sp.name} onChange={(e) => handleUpdateSpouse(idx, 'name', e.target.value)} />
+                      <input placeholder="Năm sinh" value={sp.birthYear || ''} onChange={(e) => handleUpdateSpouse(idx, 'birthYear', e.target.value)} />
                     </div>
                     <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleUpdateSpouse(idx, 'hometown', e.target.value)} />
                     <div className="form-row">

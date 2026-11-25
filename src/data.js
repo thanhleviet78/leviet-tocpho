@@ -1,4 +1,4 @@
-// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T02:15:31.943Z
+// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T02:33:20.132Z
 // Dùng thay thế toàn bộ src/data.js, sau đó Git add/commit/push.
 
 export const FAMILY_INFO = {
@@ -565,7 +565,7 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "16-02 ÂL",
-    "graveLocation": "Xứ Cồn Mè Thượng Nguyên / Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Xứ Cồn Mè Thượng Nguyên / Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, TT-Huế",
     "graveCoords": "16.534108, 107.549309",
     "motherName": "Nguyễn Thị Đặc",
     "spouses": [
@@ -573,9 +573,15 @@ export const INITIAL_MEMBERS = [
         "name": "Trần Thị Sàn",
         "role": "Vợ chánh",
         "graveLocation": "Tứ Hạ, Hương Trà, Tp.Huế",
-        "graveCoords": "16.512382, 107.458229"
+        "graveCoords": "16.512382, 107.458229",
+        "birthYear": "",
+        "hometown": "Làng Phú Ngạn, Quảng Thành, Quảng Điền, TT-Huế",
+        "deathDate": ""
       }
-    ]
+    ],
+    "address": "Làng Phú Ngạn, Quảng Thành, Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "bio": ""
   },
   {
     "id": 25,
@@ -1368,7 +1374,7 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Viết Khanh",
     "title": "Con trai thứ 9",
     "gender": "Nam",
-    "birthYear": "Chưa rõ",
+    "birthYear": "1897",
     "deathDate": "05-05 ÂL",
     "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
     "graveCoords": "16.534267, 107.549503",
@@ -1381,7 +1387,8 @@ export const INITIAL_MEMBERS = [
         "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
         "graveCoords": "16.534267, 107.549503",
         "note": "Con gái Họ Nguyễn làng Kim Đôi",
-        "hometown": "Kim Đôi, Quảng Thành, Quảng Điền, TT-Huế"
+        "hometown": "Làng Kim Đôi, xã Quảng Thành",
+        "birthYear": "1899"
       },
       {
         "name": "Lê Thị Các",
@@ -1389,11 +1396,12 @@ export const INITIAL_MEMBERS = [
         "note": "Con gái làng Hương Cần, H. Hương Trà",
         "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
         "graveCoords": "",
-        "hometown": "Hương Cần, Hương Trà, TT-Huế",
-        "deathDate": "15-08 ÂL"
+        "hometown": "Làng Hương Cần, Hương Trà, TT-Huế",
+        "deathDate": "15-08 ÂL",
+        "birthYear": "1902"
       }
     ],
-    "address": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
     "graveNote": "",
     "bio": ""
   },
