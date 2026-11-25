@@ -12,10 +12,7 @@
 ## Giai đoạn 1 – An toàn dữ liệu
 
 - Dữ liệu thành viên, tin tức, lịch phụng tu và lịch trùng tu được tự lưu trong `localStorage` của trình duyệt hiện tại; không tự đồng bộ giữa thiết bị.
-- **Sao lưu dữ liệu** xuất JSON chứa thành viên, tin tức, lịch phụng tu và trùng tu.
-- **Nhập bản sao lưu** kiểm tra JSON, danh sách thành viên, các mục dữ liệu dạng danh sách, ID, tên, đời, thứ tự con, liên kết cha/mẹ, vòng liên kết. Trước khi thay thế dữ liệu, ứng dụng yêu cầu xác nhận và tải bản sao dữ liệu hiện tại xuống.
-- **Rà soát dữ liệu** hiển thị lỗi cấu trúc và cảnh báo để người quản lý đối chiếu. Tên trùng không tự động bị xóa hay gộp.
-- Hãy giữ file JSON sao lưu ở nơi an toàn, nhất là trước khi nhập dữ liệu hoặc sửa nhiều thành viên.
+- **Xuất dữ liệu cập nhật website** tạo file `data.js` từ dữ liệu đang quản lý trên máy. Thay file này vào `src/data.js`, sau đó Git commit/push để cập nhật website công khai.
 
 
 ## Giai đoạn 2 – Cây gia phả và hồ sơ
@@ -43,3 +40,8 @@ Build/lint cần cài dependencies bằng `npm install`. Nếu mạng không ổ
 - `vercel.json` yêu cầu trình duyệt và CDN kiểm tra lại trang `/` và `/index.html` mỗi lần truy cập, tránh giữ HTML cũ sau khi deploy.
 - Các file trong `/assets/` do Vite tạo có tên kèm hash nên được cache dài hạn an toàn.
 - Sau khi cập nhật, Vercel cần triển khai lại để áp dụng header mới.
+
+
+## Cập nhật dữ liệu website công khai
+
+Trên localhost, sau khi sửa dữ liệu thành viên, bấm **Xuất dữ liệu cập nhật website**. Trình duyệt tải xuống file `data.js` chứa toàn bộ dữ liệu hiện tại (thành viên, tin tức, lịch sử tu sửa và thông tin nhà thờ). Chép file vừa tải đè lên `src/data.js`, sau đó chạy `git add .`, `git commit` và `git push origin main`. Chỉ Git Push sau khi đã thay `src/data.js` mới đưa dữ liệu lên Vercel. Nút xuất sẽ kiểm tra lỗi cấu trúc thành viên trước khi tạo file.

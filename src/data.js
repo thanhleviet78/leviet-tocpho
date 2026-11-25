@@ -1,3 +1,6 @@
+// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T01:32:53.853Z
+// Dùng thay thế toàn bộ src/data.js, sau đó Git add/commit/push.
+
 export const FAMILY_INFO = {
   "name": "GIA PHẢ HỌ LÊ VIẾT",
   "subtitle": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền (nay là TDP Tây Phú, phường Hóa Châu, TP.Huế)",
@@ -106,15 +109,15 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "12-11 ÂL",
-    "graveLocation": "16.534091, 107.549184",
-    "graveCoords": "Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.534091, 107.549184",
     "spouses": [
       {
         "name": "Thuỷ tổ tỷ Nguyễn Thị Bông",
         "role": "Vợ chánh",
         "deathDate": "05-11 ÂL",
-        "graveLocation": "16.534091, 107.549184",
-        "graveCoords": "Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+        "graveLocation": "Xứ Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+        "graveCoords": "16.534091, 107.549184",
         "note": "Con gái Họ Nguyễn Ngọc ở làng"
       }
     ],
@@ -135,10 +138,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Cỏn",
         "role": "Vợ chánh",
-        "deathDate": "11-05 ÂL"
+        "deathDate": "11-05 ÂL",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai thứ nhất Ngài Thủy tổ Lê Viết Ban."
+    "bio": "Con trai thứ nhất Ngài Thủy tổ Lê Viết Ban.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 3,
@@ -151,7 +158,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Thuỷ tổ tỷ Nguyễn Thị Bông",
-    "bio": "Con gái thứ nhất Ngài Thủy tổ Lê Viết Ban."
+    "bio": "Con gái thứ nhất Ngài Thủy tổ Lê Viết Ban.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 4,
@@ -170,10 +179,12 @@ export const INITIAL_MEMBERS = [
         "name": "Nguyễn Thị Vện (húy Do)",
         "role": "Vợ chánh",
         "deathDate": "02-07 ÂL",
-        "graveLocation": "Địa mộ thôn Đông Xuyên giáp giới Chùa Phú Ngạn"
+        "graveLocation": "Địa mộ thôn Đông Xuyên giáp giới Chùa Phú Ngạn",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai thứ nhất ông Lê Viết Phục."
+    "bio": "Con trai thứ nhất ông Lê Viết Phục.",
+    "graveCoords": ""
   },
   {
     "id": 5,
@@ -186,7 +197,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cỏn",
-    "bio": "Con gái thứ nhất ông Lê Viết Phục. Gả người Họ Nguyễn làng Đông Xuyên."
+    "bio": "Con gái thứ nhất ông Lê Viết Phục. Gả người Họ Nguyễn làng Đông Xuyên.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 6,
@@ -203,20 +216,28 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Thậm",
         "role": "Vợ chánh",
-        "deathDate": "12-01 ÂL"
+        "deathDate": "12-01 ÂL",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Thị Lựu",
         "role": "Vợ thứ",
-        "note": "Không sanh hạ"
+        "note": "Không sanh hạ",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Nguyễn Thị Phụng",
         "role": "Vợ thứ thứ",
-        "deathDate": "12-12 ÂL"
+        "deathDate": "12-12 ÂL",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai thứ hai ông Lê Viết Phục. Chức nghiệp: Chánh đội Trưởng Suất đội."
+    "bio": "Con trai thứ hai ông Lê Viết Phục. Chức nghiệp: Chánh đội Trưởng Suất đội.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 7,
@@ -228,7 +249,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "20-10 ÂL",
-    "motherName": "Nguyễn Thị Vện (húy Do)"
+    "motherName": "Nguyễn Thị Vện (húy Do)",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 8,
@@ -247,9 +270,11 @@ export const INITIAL_MEMBERS = [
         "name": "Nguyễn Thị Đặc",
         "role": "Vợ chánh",
         "deathDate": "24-06 ÂL",
-        "graveLocation": "Xứ Thượng Nguyên"
+        "graveLocation": "Xứ Thượng Nguyên",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 9,
@@ -261,7 +286,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Thậm"
+    "motherName": "Nguyễn Thị Thậm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 10,
@@ -273,7 +300,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Thậm"
+    "motherName": "Nguyễn Thị Thậm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 11,
@@ -285,7 +314,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Thậm"
+    "motherName": "Nguyễn Thị Thậm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 12,
@@ -302,9 +333,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Sửu",
         "role": "Vợ chánh",
-        "deathDate": "20-02 ÂL"
+        "deathDate": "20-02 ÂL",
+        "graveLocation": "",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 13,
@@ -321,13 +356,19 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Mai",
         "role": "Vợ chánh",
-        "deathDate": "03-01 ÂL"
+        "deathDate": "03-01 ÂL",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Lê Thị Cúc",
-        "role": "Vợ thứ"
+        "role": "Vợ thứ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 14,
@@ -339,7 +380,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Thậm"
+    "motherName": "Nguyễn Thị Thậm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 15,
@@ -356,13 +399,19 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Mục",
         "role": "Vợ chánh",
-        "note": "Không sanh hạ"
+        "note": "Không sanh hạ",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Ngô Thị Bảy",
-        "role": "Vợ thứ"
+        "role": "Vợ thứ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 16,
@@ -374,7 +423,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "25-03 ÂL",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 17,
@@ -387,7 +438,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Đặc",
-    "bio": "Gả ông Ngô Hữu Can ở làng."
+    "bio": "Gả ông Ngô Hữu Can ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 18,
@@ -399,7 +452,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "07-07 ÂL",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 19,
@@ -418,9 +473,11 @@ export const INITIAL_MEMBERS = [
         "name": "Ngô Thị Quyên",
         "role": "Vợ chánh",
         "deathDate": "30-10 ÂL",
-        "graveLocation": "Xứ Mã Cao"
+        "graveLocation": "Xứ Mã Cao",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 20,
@@ -433,7 +490,8 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "12-11 ÂL",
     "graveLocation": "Xứ Mã Cao",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveCoords": ""
   },
   {
     "id": 21,
@@ -450,17 +508,24 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Trần Thị Trách",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Trần Thị Sâm",
-        "role": "Vợ thứ"
+        "role": "Vợ thứ",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Khuyết danh",
-        "role": "Vợ thứ thứ"
+        "role": "Vợ thứ thứ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 22,
@@ -473,7 +538,8 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "27-12 ÂL",
     "graveLocation": "Xứ Cồn Cờ",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveCoords": ""
   },
   {
     "id": 23,
@@ -485,7 +551,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 24,
@@ -497,15 +565,15 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "16-02 ÂL",
-    "graveLocation": "16.534108, 107.549309",
-    "graveCoords": "Xứ Cồn Mè Thượng Nguyên / Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Xứ Cồn Mè Thượng Nguyên / Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.534108, 107.549309",
     "motherName": "Nguyễn Thị Đặc",
     "spouses": [
       {
         "name": "Trần Thị Sàn",
         "role": "Vợ chánh",
-        "graveLocation": "16.512382, 107.458229",
-        "graveCoords": "Tứ Hạ, Hương Trà, Tp.Huế"
+        "graveLocation": "Tứ Hạ, Hương Trà, Tp.Huế",
+        "graveCoords": "16.512382, 107.458229"
       }
     ]
   },
@@ -519,7 +587,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đặc"
+    "motherName": "Nguyễn Thị Đặc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 30,
@@ -531,7 +601,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 26,
@@ -543,7 +615,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 27,
@@ -555,7 +629,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 28,
@@ -567,7 +643,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 29,
@@ -579,7 +657,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 31,
@@ -591,7 +671,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Sửu"
+    "motherName": "Nguyễn Thị Sửu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 32,
@@ -603,7 +685,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Mai"
+    "motherName": "Lê Thị Mai",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 33,
@@ -615,7 +699,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Mai"
+    "motherName": "Lê Thị Mai",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 34,
@@ -627,7 +713,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Mai"
+    "motherName": "Lê Thị Mai",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 35,
@@ -639,7 +727,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Cúc"
+    "motherName": "Lê Thị Cúc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 36,
@@ -651,7 +741,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Cúc"
+    "motherName": "Lê Thị Cúc",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 37,
@@ -663,7 +755,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 38,
@@ -675,7 +769,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 39,
@@ -687,7 +783,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 40,
@@ -699,7 +797,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 41,
@@ -711,7 +811,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 42,
@@ -723,7 +825,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 43,
@@ -735,7 +839,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 44,
@@ -747,7 +853,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Bảy"
+    "motherName": "Ngô Thị Bảy",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 45,
@@ -759,7 +867,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 46,
@@ -771,7 +881,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 47,
@@ -791,9 +903,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "16-06 ÂL",
         "graveLocation": "Xứ Mã Cao",
-        "note": "Con gái Họ Ngô người ở làng"
+        "note": "Con gái Họ Ngô người ở làng",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 48,
@@ -805,7 +919,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 49,
@@ -817,7 +933,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 50,
@@ -829,7 +947,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 51,
@@ -841,7 +961,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Ngô Thị Quyên"
+    "motherName": "Ngô Thị Quyên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 52,
@@ -853,7 +975,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 53,
@@ -865,7 +989,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 54,
@@ -877,7 +1003,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 55,
@@ -897,9 +1025,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "07-09 ÂL",
         "graveLocation": "Xứ Cồn Cờ",
-        "note": "Con gái ông Nguyễn Văn Long ở làng"
+        "note": "Con gái ông Nguyễn Văn Long ở làng",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 56,
@@ -919,9 +1049,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "25-09 ÂL",
         "graveLocation": "Xứ Mã Cao",
-        "note": "Con gái ông Ngô Hữu Triết ở làng"
+        "note": "Con gái ông Ngô Hữu Triết ở làng",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 57,
@@ -933,7 +1065,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 58,
@@ -945,7 +1079,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 59,
@@ -957,7 +1093,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 60,
@@ -969,7 +1107,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 61,
@@ -981,7 +1121,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 62,
@@ -993,7 +1135,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Trách"
+    "motherName": "Trần Thị Trách",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 63,
@@ -1005,7 +1149,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 64,
@@ -1017,7 +1163,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 65,
@@ -1029,7 +1177,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 66,
@@ -1041,7 +1191,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Trần Thị Sâm"
+    "motherName": "Trần Thị Sâm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 67,
@@ -1053,7 +1205,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Khuyết danh"
+    "motherName": "Khuyết danh",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 68,
@@ -1066,7 +1220,8 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "15-05 ÂL",
     "graveLocation": "Xứ Cồn Mè Thượng Nguyên",
-    "motherName": "Trần Thị Sàn"
+    "motherName": "Trần Thị Sàn",
+    "graveCoords": ""
   },
   {
     "id": 69,
@@ -1084,31 +1239,40 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Em",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê làng Tây Thành"
+        "note": "Con gái Họ Lê làng Tây Thành",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Trần Thị Bàn",
         "role": "Vợ thứ",
         "graveLocation": "Xứ Cồn Lèn",
-        "note": "Con gái Họ Trần làng Thành Trung"
+        "note": "Con gái Họ Trần làng Thành Trung",
+        "graveCoords": ""
       },
       {
         "name": "Trương Thị Đĩ",
         "role": "Vợ thứ thứ",
         "graveLocation": "Địa mộ thôn Kim Đôi",
-        "note": "Con gái Họ Trương làng Kim Đôi"
+        "note": "Con gái Họ Trương làng Kim Đôi",
+        "graveCoords": ""
       },
       {
         "name": "Thị Dinh",
         "role": "Vợ thứ thứ thứ",
-        "note": "Con gái làng Quy Lai, H. Phú Vang"
+        "note": "Con gái làng Quy Lai, H. Phú Vang",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Thị (Khuyết danh)",
         "role": "Vợ thứ thứ thứ thứ",
-        "note": "Con gái làng Thanh Hà"
+        "note": "Con gái làng Thanh Hà",
+        "graveLocation": "",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 70,
@@ -1128,9 +1292,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "05-11 ÂL",
         "graveLocation": "Xứ Cồn Mè Thượng Nguyên",
-        "note": "Con gái Họ Trần người ở làng"
+        "note": "Con gái Họ Trần người ở làng",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 71,
@@ -1150,9 +1316,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "10-01 ÂL",
         "graveLocation": "Xứ Cồn Cờ",
-        "note": "Con gái Họ Huỳnh làng Tây Thành"
+        "note": "Con gái Họ Huỳnh làng Tây Thành",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 72,
@@ -1172,9 +1340,11 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "20-12 ÂL",
         "graveLocation": "Xứ Cồn Cờ",
-        "note": "Con gái Họ Phan làng Thanh Hà"
+        "note": "Con gái Họ Phan làng Thanh Hà",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveCoords": ""
   },
   {
     "id": 73,
@@ -1186,7 +1356,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "15-09 ÂL",
-    "motherName": "Trần Thị Sàn"
+    "motherName": "Trần Thị Sàn",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 74,
@@ -1198,22 +1370,24 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "05-05 ÂL",
-    "graveLocation": "16.534267, 107.549503",
-    "graveCoords": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.534267, 107.549503",
     "motherName": "Trần Thị Sàn",
     "spouses": [
       {
         "name": "Nguyễn Thị Quyến",
         "role": "Vợ chánh",
         "deathDate": "03-05 ÂL",
-        "graveLocation": "16.534267, 107.549503",
-        "graveCoords": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+        "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+        "graveCoords": "16.534267, 107.549503",
         "note": "Con gái Họ Nguyễn làng Kim Đôi"
       },
       {
         "name": "Nguyễn Thị Các",
         "role": "Vợ thứ",
-        "note": "Con gái làng Hương Cần, H. Hương Trà"
+        "note": "Con gái làng Hương Cần, H. Hương Trà",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ]
   },
@@ -1227,7 +1401,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "17-07 ÂL",
-    "motherName": "Trần Thị Sàn"
+    "motherName": "Trần Thị Sàn",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 76,
@@ -1239,7 +1415,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Sàn"
+    "motherName": "Trần Thị Sàn",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 77,
@@ -1251,7 +1429,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Trần Thị Sàn"
+    "motherName": "Trần Thị Sàn",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 78,
@@ -1270,9 +1450,12 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "01-12 ÂL",
         "graveLocation": "Xứ Cồn Cờ",
-        "note": "Bị chú: (Cải giá)"
+        "note": "Bị chú: (Cải giá)",
+        "graveCoords": ""
       }
-    ]
+    ],
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 79,
@@ -1285,7 +1468,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 80,
@@ -1298,7 +1483,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 81,
@@ -1311,7 +1498,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con gái ông Lê Viết Đương gả ông Nguyễn Văn Thắng ở làng."
+    "bio": "Con gái ông Lê Viết Đương gả ông Nguyễn Văn Thắng ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 82,
@@ -1324,7 +1513,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 83,
@@ -1337,7 +1528,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 84,
@@ -1350,7 +1543,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con gái ông Lê Viết Đương."
+    "bio": "Con gái ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 85,
@@ -1363,7 +1558,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 86,
@@ -1383,15 +1580,19 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "28-03 ÂL",
         "graveLocation": "Xứ Cồn Cờ",
-        "note": "Con gái Họ Nguyễn Đình ở làng"
+        "note": "Con gái Họ Nguyễn Đình ở làng",
+        "graveCoords": ""
       },
       {
         "name": "Ngô Thị Yến",
         "role": "Vợ thứ",
-        "note": "Con gái Họ Ngô người ở làng"
+        "note": "Con gái Họ Ngô người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveCoords": ""
   },
   {
     "id": 87,
@@ -1411,10 +1612,12 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "10-04 ÂL",
         "graveLocation": "Xứ Cồn Ngò",
-        "note": "Con gái ông Lê Văn Om ở làng"
+        "note": "Con gái ông Lê Văn Om ở làng",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Khuôn."
+    "bio": "Con trai ông Lê Viết Khuôn.",
+    "graveCoords": ""
   },
   {
     "id": 88,
@@ -1432,10 +1635,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Nguyệt",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn làng La Vân Hạ, xã Quảng Thọ"
+        "note": "Con gái Họ Nguyễn làng La Vân Hạ, xã Quảng Thọ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Khuôn."
+    "bio": "Con trai ông Lê Viết Khuôn.",
+    "graveCoords": ""
   },
   {
     "id": 89,
@@ -1448,7 +1654,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Yến",
-    "bio": "Con trai ông Lê Viết Khuôn."
+    "bio": "Con trai ông Lê Viết Khuôn.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 90,
@@ -1465,10 +1673,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Phan Thị Sương",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Phan làng Phú Lương A"
+        "note": "Con gái Họ Phan làng Phú Lương A",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Hiện."
+    "bio": "Con trai ông Lê Viết Hiện.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 91,
@@ -1485,10 +1697,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Nguyệt",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Văn Bảo ở làng"
+        "note": "Con gái ông Nguyễn Văn Bảo ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Hiện."
+    "bio": "Con trai ông Lê Viết Hiện.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 92,
@@ -1505,10 +1721,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Huỳnh Thị Nữ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Huỳnh làng Tây Thành"
+        "note": "Con gái Họ Huỳnh làng Tây Thành",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 93,
@@ -1521,7 +1741,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Tắt gả người Họ Trần ở làng."
+    "bio": "Con gái ông Lê Viết Tắt gả người Họ Trần ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 94,
@@ -1534,7 +1756,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Tắt gả ông Trần Xuân Quang làng Mỹ Xá."
+    "bio": "Con gái ông Lê Viết Tắt gả ông Trần Xuân Quang làng Mỹ Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 95,
@@ -1547,7 +1771,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Tắt gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Tắt gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 96,
@@ -1564,10 +1790,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Huỳnh Thị Toàn",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Huỳnh làng Tây Thành"
+        "note": "Con gái Họ Huỳnh làng Tây Thành",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 97,
@@ -1581,7 +1811,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Chưa rõ",
     "graveLocation": "Xứ Nam Ô, Tp. Đà Nẵng",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveCoords": ""
   },
   {
     "id": 98,
@@ -1598,10 +1829,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Hồ Thị Thủy",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Hồ xã Hải Dương"
+        "note": "Con gái Họ Hồ xã Hải Dương",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 99,
@@ -1618,10 +1853,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Phan Thị Đài",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Phan làng Thủy Điền"
+        "note": "Con gái Họ Phan làng Thủy Điền",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt. (Ghi chú: Con của chú Lê Viết Bình sẽ bổ sung sau, vì còn nhỏ)."
+    "bio": "Con trai ông Lê Viết Tắt. (Ghi chú: Con của chú Lê Viết Bình sẽ bổ sung sau, vì còn nhỏ).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 100,
@@ -1635,7 +1874,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "24-12 ÂL",
     "graveLocation": "Xứ Quảng Ngãi",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveCoords": ""
   },
   {
     "id": 101,
@@ -1648,7 +1888,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Tắt gả người Họ Nguyễn làng Hương Cần."
+    "bio": "Con gái ông Lê Viết Tắt gả người Họ Nguyễn làng Hương Cần.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 102,
@@ -1665,10 +1907,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Đặng Thị Thu Thủy",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Đặng xã Phú Xuân, huyện Phú Vang"
+        "note": "Con gái Họ Đặng xã Phú Xuân, huyện Phú Vang",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt. (Ghi chú: Con của chú Lê Viết Hòa sẽ bổ sung sau, vì còn nhỏ)."
+    "bio": "Con trai ông Lê Viết Tắt. (Ghi chú: Con của chú Lê Viết Hòa sẽ bổ sung sau, vì còn nhỏ).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 103,
@@ -1686,10 +1932,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Nguyệt",
         "role": "Vợ chánh",
-        "note": "Không sanh hạ (cải giá)"
+        "note": "Không sanh hạ (cải giá)",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tắt."
+    "bio": "Con trai ông Lê Viết Tắt.",
+    "graveCoords": ""
   },
   {
     "id": 104,
@@ -1706,10 +1955,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Bích Lan",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn xã Minh Hợp, tỉnh Nghệ An"
+        "note": "Con gái Họ Nguyễn xã Minh Hợp, tỉnh Nghệ An",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Trung."
+    "bio": "Con trai ông Lê Viết Trung.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 105,
@@ -1722,7 +1975,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Bích Lan",
-    "bio": "Con trai ông Lê Viết Trường."
+    "bio": "Con trai ông Lê Viết Trường.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 106,
@@ -1735,7 +1990,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Sương",
-    "bio": "Con gái ông Lê Viết Trung."
+    "bio": "Con gái ông Lê Viết Trung.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 107,
@@ -1748,7 +2005,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Sương",
-    "bio": "Con gái ông Lê Viết Trung."
+    "bio": "Con gái ông Lê Viết Trung.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 108,
@@ -1762,7 +2021,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "06-12 ÂL",
     "graveLocation": "Xứ Thành đất Quan Phòng",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Sửu."
+    "bio": "Con gái ông Lê Viết Sửu.",
+    "graveCoords": ""
   },
   {
     "id": 109,
@@ -1775,7 +2035,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con gái ông Lê Viết Sửu gả người Họ Trần ở làng."
+    "bio": "Con gái ông Lê Viết Sửu gả người Họ Trần ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 110,
@@ -1788,7 +2050,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Nguyệt",
-    "bio": "Con trai ông Lê Viết Sửu."
+    "bio": "Con trai ông Lê Viết Sửu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 111,
@@ -1801,7 +2065,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Nữ",
-    "bio": "Con gái ông Lê Viết Điệp gả người Họ Trịnh làng La Vân Hạ."
+    "bio": "Con gái ông Lê Viết Điệp gả người Họ Trịnh làng La Vân Hạ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 112,
@@ -1818,10 +2084,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Võ Thanh Hồng Phương",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Võ xã Thủy Xuân, huyện Hương Thủy"
+        "note": "Con gái Họ Võ xã Thủy Xuân, huyện Hương Thủy",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Điệp."
+    "bio": "Con trai ông Lê Viết Điệp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 113,
@@ -1834,7 +2104,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Nữ",
-    "bio": "Con gái ông Lê Viết Điệp gả người Họ Đặng thôn Hà Lạc."
+    "bio": "Con gái ông Lê Viết Điệp gả người Họ Đặng thôn Hà Lạc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 114,
@@ -1847,7 +2119,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Nữ",
-    "bio": "Con gái ông Lê Viết Điệp."
+    "bio": "Con gái ông Lê Viết Điệp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 115,
@@ -1860,7 +2134,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Nữ",
-    "bio": "Con gái ông Lê Viết Điệp."
+    "bio": "Con gái ông Lê Viết Điệp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 116,
@@ -1873,7 +2149,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Nữ",
-    "bio": "Con gái ông Lê Viết Điệp."
+    "bio": "Con gái ông Lê Viết Điệp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 117,
@@ -1886,7 +2164,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Toàn",
-    "bio": "Con trai ông Lê Viết Tùng."
+    "bio": "Con trai ông Lê Viết Tùng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 118,
@@ -1899,7 +2179,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Toàn",
-    "bio": "Con gái ông Lê Viết Tùng."
+    "bio": "Con gái ông Lê Viết Tùng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 119,
@@ -1912,7 +2194,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "17-02 ÂL",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con Vô danh ông Lê Viết Niệm."
+    "bio": "Con Vô danh ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 120,
@@ -1925,7 +2209,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con gái ông Lê Viết Niệm."
+    "bio": "Con gái ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 121,
@@ -1938,7 +2224,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con gái ông Lê Viết Niệm."
+    "bio": "Con gái ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 122,
@@ -1951,7 +2239,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "28-03 ÂL",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con Vô danh ông Lê Viết Niệm."
+    "bio": "Con Vô danh ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 123,
@@ -1964,7 +2254,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con gái ông Lê Viết Niệm."
+    "bio": "Con gái ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 124,
@@ -1977,7 +2269,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "28-03 ÂL",
     "motherName": "Hồ Thị Thủy",
-    "bio": "Con Vô danh ông Lê Viết Niệm."
+    "bio": "Con Vô danh ông Lê Viết Niệm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 125,
@@ -1990,7 +2284,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Đài",
-    "bio": "Con gái ông Lê Viết Bình."
+    "bio": "Con gái ông Lê Viết Bình.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 126,
@@ -2003,7 +2299,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Đài",
-    "bio": "Con trai ông Lê Viết Bình."
+    "bio": "Con trai ông Lê Viết Bình.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 127,
@@ -2023,10 +2321,12 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "05-11 ÂL",
         "graveLocation": "Xứ Mã Cao",
-        "note": "Con gái phái Trương Văn ở làng"
+        "note": "Con gái phái Trương Văn ở làng",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đương."
+    "bio": "Con trai ông Lê Viết Đương.",
+    "graveCoords": ""
   },
   {
     "id": 128,
@@ -2044,10 +2344,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Gái",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Ngọc Nguyên ở làng"
+        "note": "Con gái ông Nguyễn Ngọc Nguyên ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tráp."
+    "bio": "Con trai ông Lê Viết Tráp.",
+    "graveCoords": ""
   },
   {
     "id": 129,
@@ -2065,20 +2368,27 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Gái",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Đình Tao ở làng"
+        "note": "Con gái ông Nguyễn Đình Tao ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Nguyễn Thị Lạc",
         "role": "Vợ thứ",
-        "note": "Con gái Họ Nguyễn xứ Cầu Hai"
+        "note": "Con gái Họ Nguyễn xứ Cầu Hai",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Nguyễn Thị Xê",
         "role": "Vợ thứ thứ",
-        "note": "Con gái Họ Nguyễn xứ Cầu Hai"
+        "note": "Con gái Họ Nguyễn xứ Cầu Hai",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tráp."
+    "bio": "Con trai ông Lê Viết Tráp.",
+    "graveCoords": ""
   },
   {
     "id": 130,
@@ -2094,10 +2404,14 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Hồ Thị Min",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tráp."
+    "bio": "Con trai ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 131,
@@ -2110,7 +2424,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con trai ông Lê Viết Tráp."
+    "bio": "Con trai ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 132,
@@ -2123,7 +2439,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con trai ông Lê Viết Tráp."
+    "bio": "Con trai ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 133,
@@ -2136,7 +2454,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "19-01 ÂL",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con gái ông Lê Viết Tráp."
+    "bio": "Con gái ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 134,
@@ -2149,7 +2469,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "19-01 ÂL",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con gái ông Lê Viết Tráp."
+    "bio": "Con gái ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 135,
@@ -2162,7 +2484,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con gái ông Lê Viết Tráp gả người Họ Đinh huyện Điện Bàn."
+    "bio": "Con gái ông Lê Viết Tráp gả người Họ Đinh huyện Điện Bàn.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 136,
@@ -2175,7 +2499,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Chắc",
-    "bio": "Con gái ông Lê Viết Tráp gả người Họ Trần ở làng."
+    "bio": "Con gái ông Lê Viết Tráp gả người Họ Trần ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 137,
@@ -2188,7 +2514,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Trương Thị Chắc",
-    "bio": "Chín vị mất sớm con ông Lê Viết Tráp."
+    "bio": "Chín vị mất sớm con ông Lê Viết Tráp.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 138,
@@ -2206,15 +2534,20 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Ngô Thị Xuồng",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Ngô người ở làng"
+        "note": "Con gái Họ Ngô người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Mai Thị Hiếu",
         "role": "Vợ thứ",
-        "note": "Con gái Họ Mai làng Thanh Hà"
+        "note": "Con gái Họ Mai làng Thanh Hà",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Xốt."
+    "bio": "Con trai ông Lê Viết Xốt.",
+    "graveCoords": ""
   },
   {
     "id": 139,
@@ -2227,7 +2560,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Gái",
-    "bio": "Con gái ông Lê Viết Xốt gả người Họ Ngô ở làng."
+    "bio": "Con gái ông Lê Viết Xốt gả người Họ Ngô ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 140,
@@ -2244,10 +2579,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Hải",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn người ở làng"
+        "note": "Con gái Họ Nguyễn người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Xốt."
+    "bio": "Con trai ông Lê Viết Xốt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 141,
@@ -2261,7 +2600,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "28-09 ÂL",
     "graveLocation": "Xứ Mã Cao",
     "motherName": "Nguyễn Thị Gái",
-    "bio": "Con trai ông Lê Viết Xốt."
+    "bio": "Con trai ông Lê Viết Xốt.",
+    "graveCoords": ""
   },
   {
     "id": 142,
@@ -2278,10 +2618,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Bích",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần người ở làng"
+        "note": "Con gái Họ Trần người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Xốt."
+    "bio": "Con trai ông Lê Viết Xốt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 143,
@@ -2294,7 +2638,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Gái",
-    "bio": "Con Vô danh ông Lê Viết Xốt."
+    "bio": "Con Vô danh ông Lê Viết Xốt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 144,
@@ -2307,7 +2653,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Gái",
-    "bio": "Con Vô danh ông Lê Viết Xốt."
+    "bio": "Con Vô danh ông Lê Viết Xốt.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 145,
@@ -2320,7 +2668,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Gái",
-    "bio": "Con gái ông Lê Viết Tâm lấy chồng ở tỉnh Quảng Ngãi."
+    "bio": "Con gái ông Lê Viết Tâm lấy chồng ở tỉnh Quảng Ngãi.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 146,
@@ -2337,10 +2687,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Mừng",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần người ở xứ Cầu Hai"
+        "note": "Con gái Họ Trần người ở xứ Cầu Hai",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 147,
@@ -2357,10 +2711,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Phượng",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn người ở làng"
+        "note": "Con gái Họ Nguyễn người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 148,
@@ -2377,10 +2735,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Võ Thị Hà",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Võ xã Quảng Thọ"
+        "note": "Con gái Họ Võ xã Quảng Thọ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 149,
@@ -2393,7 +2755,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Lạc",
-    "bio": "Con Vô danh ông Lê Viết Tâm."
+    "bio": "Con Vô danh ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 150,
@@ -2410,10 +2774,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Ngọc Hạnh",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần người ở xứ Cầu Hai"
+        "note": "Con gái Họ Trần người ở xứ Cầu Hai",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 151,
@@ -2426,7 +2794,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Lạc",
-    "bio": "Con gái ông Lê Viết Tâm."
+    "bio": "Con gái ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 152,
@@ -2443,10 +2813,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Giáng Hoa",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn người ở tỉnh Gia Lai"
+        "note": "Con gái Họ Nguyễn người ở tỉnh Gia Lai",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 153,
@@ -2459,7 +2833,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Lạc",
-    "bio": "Con gái ông Lê Viết Tâm."
+    "bio": "Con gái ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 154,
@@ -2472,7 +2848,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Lạc",
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 155,
@@ -2485,7 +2863,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xê",
-    "bio": "Con gái ông Lê Viết Tâm."
+    "bio": "Con gái ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 156,
@@ -2498,7 +2878,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xê",
-    "bio": "Con trai ông Lê Viết Tâm."
+    "bio": "Con trai ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 157,
@@ -2511,7 +2893,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xê",
-    "bio": "Con gái ông Lê Viết Tâm."
+    "bio": "Con gái ông Lê Viết Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 158,
@@ -2528,10 +2912,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Kim Nhớ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn, xã Thủy Phương"
+        "note": "Con gái Họ Nguyễn, xã Thủy Phương",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Ba."
+    "bio": "Con trai ông Lê Viết Ba.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 159,
@@ -2544,7 +2932,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Hồ Thị Min",
-    "bio": "Con gái ông Lê Viết Ba gả người Họ Lê, thôn Phú Lương A."
+    "bio": "Con gái ông Lê Viết Ba gả người Họ Lê, thôn Phú Lương A.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 160,
@@ -2557,7 +2947,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Hồ Thị Min",
-    "bio": "Con gái ông Lê Viết Ba gả người Họ Lê, xứ Kim Long."
+    "bio": "Con gái ông Lê Viết Ba gả người Họ Lê, xứ Kim Long.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 161,
@@ -2570,7 +2962,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Hồ Thị Min",
-    "bio": "Con Vô danh ông Lê Viết Ba."
+    "bio": "Con Vô danh ông Lê Viết Ba.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 162,
@@ -2587,10 +2981,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Tuyết",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê, xã Quảng Ngạn"
+        "note": "Con gái Họ Lê, xã Quảng Ngạn",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Lộc."
+    "bio": "Con trai ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 163,
@@ -2603,7 +3001,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Tuyết",
-    "bio": "Con gái ông Lê Viết Thọ."
+    "bio": "Con gái ông Lê Viết Thọ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 164,
@@ -2616,7 +3016,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Thọ."
+    "bio": "Con trai ông Lê Viết Thọ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 165,
@@ -2629,7 +3031,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Thọ."
+    "bio": "Con trai ông Lê Viết Thọ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 166,
@@ -2642,7 +3046,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Xuồng",
-    "bio": "Con gái ông Lê Viết Lộc."
+    "bio": "Con gái ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 167,
@@ -2655,7 +3061,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Xuồng",
-    "bio": "Con trai ông Lê Viết Lộc."
+    "bio": "Con trai ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 168,
@@ -2668,7 +3076,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Xuồng",
-    "bio": "Con trai ông Lê Viết Lộc."
+    "bio": "Con trai ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 169,
@@ -2681,7 +3091,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Xuồng",
-    "bio": "Con trai ông Lê Viết Lộc."
+    "bio": "Con trai ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 170,
@@ -2694,7 +3106,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Xuồng",
-    "bio": "Con gái ông Lê Viết Lộc."
+    "bio": "Con gái ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 171,
@@ -2707,7 +3121,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Mai Thị Hiếu",
-    "bio": "Con trai ông Lê Viết Lộc."
+    "bio": "Con trai ông Lê Viết Lộc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 172,
@@ -2720,7 +3136,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Hải",
-    "bio": "Con trai ông Lê Viết Lợi."
+    "bio": "Con trai ông Lê Viết Lợi.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 173,
@@ -2733,7 +3151,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Hải",
-    "bio": "Con gái ông Lê Viết Lợi."
+    "bio": "Con gái ông Lê Viết Lợi.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 174,
@@ -2746,7 +3166,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Hải",
-    "bio": "Con trai ông Lê Viết Lợi."
+    "bio": "Con trai ông Lê Viết Lợi.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 175,
@@ -2759,7 +3181,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bích",
-    "bio": "Con gái ông Lê Viết Năm."
+    "bio": "Con gái ông Lê Viết Năm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 176,
@@ -2772,7 +3196,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bích",
-    "bio": "Con gái ông Lê Viết Năm."
+    "bio": "Con gái ông Lê Viết Năm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 177,
@@ -2785,7 +3211,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bích",
-    "bio": "Con trai ông Lê Viết Năm."
+    "bio": "Con trai ông Lê Viết Năm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 178,
@@ -2798,7 +3226,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bích",
-    "bio": "Con trai ông Lê Viết Năm."
+    "bio": "Con trai ông Lê Viết Năm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 179,
@@ -2811,7 +3241,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Mừng",
-    "bio": "Con gái ông Lê Viết Can."
+    "bio": "Con gái ông Lê Viết Can.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 180,
@@ -2824,7 +3256,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Mừng",
-    "bio": "Con gái ông Lê Viết Can."
+    "bio": "Con gái ông Lê Viết Can.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 181,
@@ -2837,7 +3271,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Mừng",
-    "bio": "Con trai ông Lê Viết Can."
+    "bio": "Con trai ông Lê Viết Can.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 182,
@@ -2850,7 +3286,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Mừng",
-    "bio": "Con trai ông Lê Viết Can."
+    "bio": "Con trai ông Lê Viết Can.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 183,
@@ -2863,7 +3301,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Phượng",
-    "bio": "Con trai ông Lê Viết Hải."
+    "bio": "Con trai ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 184,
@@ -2876,7 +3316,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Phượng",
-    "bio": "Con gái ông Lê Viết Hải."
+    "bio": "Con gái ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 185,
@@ -2889,7 +3331,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Phượng",
-    "bio": "Con trai ông Lê Viết Hải."
+    "bio": "Con trai ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 186,
@@ -2902,7 +3346,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Hà",
-    "bio": "Con trai ông Lê Viết Tuấn."
+    "bio": "Con trai ông Lê Viết Tuấn.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 187,
@@ -2915,7 +3361,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Ngọc Hạnh",
-    "bio": "Con trai ông Lê Viết Hùng."
+    "bio": "Con trai ông Lê Viết Hùng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 188,
@@ -2928,7 +3376,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Ngọc Hạnh",
-    "bio": "Con trai ông Lê Viết Hùng."
+    "bio": "Con trai ông Lê Viết Hùng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 189,
@@ -2941,7 +3391,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Kim Nhớ",
-    "bio": "Con trai ông Lê Viết Bình."
+    "bio": "Con trai ông Lê Viết Bình.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 190,
@@ -2954,7 +3406,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Kim Nhớ",
-    "bio": "Con gái ông Lê Viết Bình."
+    "bio": "Con gái ông Lê Viết Bình.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 191,
@@ -2972,10 +3426,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Ngô Thị Thỏ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Ngô người ở làng"
+        "note": "Con gái Họ Ngô người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Em."
+    "bio": "Con trai ông Lê Viết Em.",
+    "graveCoords": ""
   },
   {
     "id": 192,
@@ -2993,10 +3450,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Tuyết",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Đình Tịnh ở làng"
+        "note": "Con gái ông Nguyễn Đình Tịnh ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Vàng."
+    "bio": "Con trai ông Lê Viết Vàng.",
+    "graveCoords": ""
   },
   {
     "id": 193,
@@ -3009,7 +3469,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con gái ông Lê Viết Vàng."
+    "bio": "Con gái ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 194,
@@ -3022,7 +3484,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con trai ông Lê Viết Vàng."
+    "bio": "Con trai ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 195,
@@ -3035,7 +3499,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con gái ông Lê Viết Vàng."
+    "bio": "Con gái ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 196,
@@ -3048,7 +3514,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con trai ông Lê Viết Vàng."
+    "bio": "Con trai ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 197,
@@ -3061,7 +3529,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con trai ông Lê Viết Vàng."
+    "bio": "Con trai ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 198,
@@ -3074,7 +3544,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Thỏ",
-    "bio": "Con trai ông Lê Viết Vàng."
+    "bio": "Con trai ông Lê Viết Vàng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 199,
@@ -3087,7 +3559,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con gái ông Lê Viết Giao."
+    "bio": "Con gái ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 200,
@@ -3100,7 +3574,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Giao."
+    "bio": "Con trai ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 201,
@@ -3113,7 +3589,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con Vô danh ông Lê Viết Giao."
+    "bio": "Con Vô danh ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 202,
@@ -3126,7 +3604,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Giao."
+    "bio": "Con trai ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 203,
@@ -3139,7 +3619,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Giao."
+    "bio": "Con trai ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 204,
@@ -3152,7 +3634,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con gái ông Lê Viết Giao."
+    "bio": "Con gái ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 205,
@@ -3165,7 +3649,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con gái ông Lê Viết Giao."
+    "bio": "Con gái ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 206,
@@ -3178,7 +3664,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Tuyết",
-    "bio": "Con trai ông Lê Viết Giao."
+    "bio": "Con trai ông Lê Viết Giao.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 207,
@@ -3198,10 +3686,12 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "28-09 ÂL",
         "graveLocation": "Xứ Mã Cao song hồn",
-        "note": "Con gái ông Nguyễn Đình Đảnh ở làng"
+        "note": "Con gái ông Nguyễn Đình Đảnh ở làng",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Nhất."
+    "bio": "Con trai ông Lê Viết Nhất.",
+    "graveCoords": ""
   },
   {
     "id": 208,
@@ -3215,7 +3705,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Chưa rõ",
     "graveLocation": "Xứ Cồn Cờ",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con trai ông Lê Viết Khúc."
+    "bio": "Con trai ông Lê Viết Khúc.",
+    "graveCoords": ""
   },
   {
     "id": 209,
@@ -3229,7 +3720,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Mất sớm",
     "graveLocation": "Xứ Hói Ngang",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con Vô danh ông Lê Viết Khúc."
+    "bio": "Con Vô danh ông Lê Viết Khúc.",
+    "graveCoords": ""
   },
   {
     "id": 210,
@@ -3242,7 +3734,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con gái ông Lê Viết Khúc gả người Họ Đoàn làng Sình."
+    "bio": "Con gái ông Lê Viết Khúc gả người Họ Đoàn làng Sình.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 211,
@@ -3255,7 +3749,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con gái ông Lê Viết Khúc gả người Họ Phan làng An Xuân."
+    "bio": "Con gái ông Lê Viết Khúc gả người Họ Phan làng An Xuân.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 212,
@@ -3268,7 +3764,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con gái ông Lê Viết Khúc gả người Họ Lê Văn làng Tây Thành."
+    "bio": "Con gái ông Lê Viết Khúc gả người Họ Lê Văn làng Tây Thành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 213,
@@ -3282,7 +3780,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Chưa rõ",
     "graveLocation": "Xứ Mã Cao",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con trai ông Lê Viết Khúc."
+    "bio": "Con trai ông Lê Viết Khúc.",
+    "graveCoords": ""
   },
   {
     "id": 214,
@@ -3295,7 +3794,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Xú",
-    "bio": "Con Vô danh ông Lê Viết Khúc."
+    "bio": "Con Vô danh ông Lê Viết Khúc.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 215,
@@ -3312,10 +3813,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Dị",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Đình Sanh ở làng"
+        "note": "Con gái ông Nguyễn Đình Sanh ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Nhất."
+    "bio": "Con trai ông Lê Viết Nhất.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 216,
@@ -3328,7 +3833,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 217,
@@ -3341,7 +3848,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 218,
@@ -3358,10 +3867,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Ngô Thị Lợi",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Ngô người ở làng"
+        "note": "Con gái Họ Ngô người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Thỉ."
+    "bio": "Con trai ông Lê Viết Thỉ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 219,
@@ -3374,7 +3887,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 220,
@@ -3387,7 +3902,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 221,
@@ -3401,7 +3918,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "10-05 ÂL",
     "graveLocation": "Xứ Mã Cao",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ."
+    "bio": "Con gái ông Lê Viết Thỉ.",
+    "graveCoords": ""
   },
   {
     "id": 222,
@@ -3415,7 +3933,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Mất sớm",
     "graveLocation": "Xứ Mã Cao",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con Vô danh ông Lê Viết Thỉ."
+    "bio": "Con Vô danh ông Lê Viết Thỉ.",
+    "graveCoords": ""
   },
   {
     "id": 223,
@@ -3432,10 +3951,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Nghĩa",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần xã Quảng Thái"
+        "note": "Con gái Họ Trần xã Quảng Thái",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Thỉ."
+    "bio": "Con trai ông Lê Viết Thỉ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 224,
@@ -3448,7 +3971,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Dị",
-    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Viết Thỉ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 225,
@@ -3461,7 +3986,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Lợi",
-    "bio": "Con trai ông Lê Viết Thạnh."
+    "bio": "Con trai ông Lê Viết Thạnh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 226,
@@ -3474,7 +4001,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Lợi",
-    "bio": "Con gái ông Lê Viết Thạnh."
+    "bio": "Con gái ông Lê Viết Thạnh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 227,
@@ -3487,7 +4016,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Lợi",
-    "bio": "Con trai ông Lê Viết Thạnh."
+    "bio": "Con trai ông Lê Viết Thạnh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 228,
@@ -3500,7 +4031,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Ngô Thị Lợi",
-    "bio": "Con Vô danh ông Lê Viết Thạnh."
+    "bio": "Con Vô danh ông Lê Viết Thạnh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 229,
@@ -3513,7 +4046,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Nghĩa",
-    "bio": "Con gái ông Lê Viết Thành."
+    "bio": "Con gái ông Lê Viết Thành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 230,
@@ -3526,7 +4061,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Nghĩa",
-    "bio": "Con gái ông Lê Viết Thành."
+    "bio": "Con gái ông Lê Viết Thành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 231,
@@ -3543,10 +4080,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Theo",
         "role": "Vợ chánh",
-        "note": "Con gái ông Nguyễn Đình Hàm ở làng"
+        "note": "Con gái ông Nguyễn Đình Hàm ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Trưng."
+    "bio": "Con trai ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 232,
@@ -3559,7 +4100,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Theo",
-    "bio": "Con gái ông Lê Viết Hanh."
+    "bio": "Con gái ông Lê Viết Hanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 233,
@@ -3572,7 +4115,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Theo",
-    "bio": "Con trai ông Lê Viết Hanh."
+    "bio": "Con trai ông Lê Viết Hanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 234,
@@ -3585,7 +4130,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Theo",
-    "bio": "Con gái ông Lê Viết Hanh."
+    "bio": "Con gái ông Lê Viết Hanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 235,
@@ -3598,7 +4145,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Theo",
-    "bio": "Con trai ông Lê Viết Hanh."
+    "bio": "Con trai ông Lê Viết Hanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 236,
@@ -3611,7 +4160,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Theo",
-    "bio": "Con gái ông Lê Viết Hanh."
+    "bio": "Con gái ông Lê Viết Hanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 237,
@@ -3628,10 +4179,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Đặng Thị Trinh",
         "role": "Vợ chánh",
-        "note": "Con gái ông Đặng Em làng An Xuân"
+        "note": "Con gái ông Đặng Em làng An Xuân",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Khánh."
+    "bio": "Con trai ông Lê Viết Khánh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 238,
@@ -3649,10 +4204,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Sáo",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần xã Thủy Thanh, huyện Hương Thủy"
+        "note": "Con gái Họ Trần xã Thủy Thanh, huyện Hương Thủy",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveCoords": ""
   },
   {
     "id": 239,
@@ -3665,7 +4223,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con gái ông Lê Viết Tương."
+    "bio": "Con gái ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 240,
@@ -3678,7 +4238,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 241,
@@ -3695,10 +4257,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Phạm Thị Vân",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Phạm xã Phú Thượng, huyện Phú Vang"
+        "note": "Con gái Họ Phạm xã Phú Thượng, huyện Phú Vang",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 242,
@@ -3711,7 +4277,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con gái ông Lê Viết Tương."
+    "bio": "Con gái ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 243,
@@ -3724,7 +4292,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con gái ông Lê Viết Tương gả người Họ Đoàn, xã Quảng Phú."
+    "bio": "Con gái ông Lê Viết Tương gả người Họ Đoàn, xã Quảng Phú.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 244,
@@ -3742,10 +4312,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Quýt",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê xã Hương Phong, huyện Hương Trà"
+        "note": "Con gái Họ Lê xã Hương Phong, huyện Hương Trà",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveCoords": ""
   },
   {
     "id": 245,
@@ -3762,10 +4335,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Yến",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê huyện Triệu Phong, tỉnh Quảng Trị"
+        "note": "Con gái Họ Lê huyện Triệu Phong, tỉnh Quảng Trị",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 246,
@@ -3782,10 +4359,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Nở",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê phường Thuỷ An, TP.Huế"
+        "note": "Con gái Họ Lê phường Thuỷ An, TP.Huế",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tương."
+    "bio": "Con trai ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 247,
@@ -3798,7 +4379,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con Vô danh ông Lê Viết Tương."
+    "bio": "Con Vô danh ông Lê Viết Tương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 248,
@@ -3811,7 +4394,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Đặng Thị Trinh",
-    "bio": "Con gái ông Lê Viết Tương gả người Họ Thái, xã Quảng Phú."
+    "bio": "Con gái ông Lê Viết Tương gả người Họ Thái, xã Quảng Phú.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 249,
@@ -3824,7 +4409,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sáo",
-    "bio": "Con gái ông Lê Viết Liêu."
+    "bio": "Con gái ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 250,
@@ -3837,7 +4424,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sáo",
-    "bio": "Con gái ông Lê Viết Liêu gả người Họ Ngô ở tỉnh Cần Thơ."
+    "bio": "Con gái ông Lê Viết Liêu gả người Họ Ngô ở tỉnh Cần Thơ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 251,
@@ -3850,7 +4439,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sáo",
-    "bio": "Con gái ông Lê Viết Liêu."
+    "bio": "Con gái ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 252,
@@ -3867,10 +4458,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trương Thị Minh Tuệ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trương, tỉnh Quảng Ngãi"
+        "note": "Con gái Họ Trương, tỉnh Quảng Ngãi",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Liêu."
+    "bio": "Con trai ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 253,
@@ -3887,10 +4482,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lưu Thị Quốc Trinh",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lưu, tỉnh Kiên Giang"
+        "note": "Con gái Họ Lưu, tỉnh Kiên Giang",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Liêu."
+    "bio": "Con trai ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 254,
@@ -3903,7 +4502,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sáo",
-    "bio": "Con gái ông Lê Viết Liêu."
+    "bio": "Con gái ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 255,
@@ -3920,10 +4521,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Võ Thị Tố Nguyên",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Võ, tỉnh Tiền Giang"
+        "note": "Con gái Họ Võ, tỉnh Tiền Giang",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Liêu."
+    "bio": "Con trai ông Lê Viết Liêu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 256,
@@ -3937,7 +4542,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Mất sớm",
     "graveLocation": "Mộ tại xứ huyện Phú Vang",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveCoords": ""
   },
   {
     "id": 257,
@@ -3954,10 +4560,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Bàng Thị Lệ Yến",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Bàng, nước Trung Quốc"
+        "note": "Con gái Họ Bàng, nước Trung Quốc",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 258,
@@ -3970,7 +4580,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con gái ông Lê Viết Lưu."
+    "bio": "Con gái ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 259,
@@ -3983,7 +4595,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con gái ông Lê Viết Lưu gả người Họ Đặng, ở TP. Đà Nẵng."
+    "bio": "Con gái ông Lê Viết Lưu gả người Họ Đặng, ở TP. Đà Nẵng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 260,
@@ -3996,7 +4610,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 261,
@@ -4010,7 +4626,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Mất sớm",
     "graveLocation": "Mộ tại xứ huyện Phú Vang",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveCoords": ""
   },
   {
     "id": 262,
@@ -4023,7 +4640,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con gái ông Lê Viết Lưu."
+    "bio": "Con gái ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 263,
@@ -4036,7 +4655,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 264,
@@ -4050,7 +4671,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "Mất sớm",
     "graveLocation": "Mộ tại xứ huyện Phú Vang",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con gái ông Lê Viết Lưu."
+    "bio": "Con gái ông Lê Viết Lưu.",
+    "graveCoords": ""
   },
   {
     "id": 265,
@@ -4063,7 +4685,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phạm Thị Vân",
-    "bio": "Con trai ông Lê Viết Lưu."
+    "bio": "Con trai ông Lê Viết Lưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 266,
@@ -4080,10 +4704,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Nở",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần"
+        "note": "Con gái Họ Trần",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Hải."
+    "bio": "Con trai ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 267,
@@ -4096,7 +4724,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Quýt",
-    "bio": "Con trai ông Lê Viết Hải."
+    "bio": "Con trai ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 268,
@@ -4113,10 +4743,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Ngọc Bích",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê ở xứ Hương Sơ"
+        "note": "Con gái Họ Lê ở xứ Hương Sơ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Hải."
+    "bio": "Con trai ông Lê Viết Hải.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 269,
@@ -4129,7 +4763,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Quýt",
-    "bio": "Con gái ông Lê Viết Hải gả người Họ HồTrần, Tp.Biên Hoà."
+    "bio": "Con gái ông Lê Viết Hải gả người Họ HồTrần, Tp.Biên Hoà.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 270,
@@ -4142,7 +4778,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Quýt",
-    "bio": "Con gái ông Lê Viết Hải gả người Họ Trần."
+    "bio": "Con gái ông Lê Viết Hải gả người Họ Trần.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 271,
@@ -4155,7 +4793,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Yến",
-    "bio": "Con gái ông Lê Viết Khương."
+    "bio": "Con gái ông Lê Viết Khương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 272,
@@ -4168,7 +4808,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Yến",
-    "bio": "Con trai ông Lê Viết Khương."
+    "bio": "Con trai ông Lê Viết Khương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 273,
@@ -4185,10 +4827,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Thuỳ Trang",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn, Tp.Hồ Chí Minh"
+        "note": "Con gái Họ Nguyễn, Tp.Hồ Chí Minh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đính."
+    "bio": "Con trai ông Lê Viết Đính.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 274,
@@ -4201,7 +4847,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Nở",
-    "bio": "Con trai ông Lê Viết Đính."
+    "bio": "Con trai ông Lê Viết Đính.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 275,
@@ -4214,7 +4862,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Minh Tuệ",
-    "bio": "Con trai ông Lê Viết Nguyên Thông."
+    "bio": "Con trai ông Lê Viết Nguyên Thông.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 276,
@@ -4227,7 +4877,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Minh Tuệ",
-    "bio": "Con trai ông Lê Viết Nguyên Thông."
+    "bio": "Con trai ông Lê Viết Nguyên Thông.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 277,
@@ -4240,7 +4892,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lưu Thị Quốc Trinh",
-    "bio": "Con trai ông Lê Viết Nguyên Phong."
+    "bio": "Con trai ông Lê Viết Nguyên Phong.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 278,
@@ -4253,7 +4907,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lưu Thị Quốc Trinh",
-    "bio": "Con trai ông Lê Viết Nguyên Phong."
+    "bio": "Con trai ông Lê Viết Nguyên Phong.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 279,
@@ -4266,7 +4922,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Tố Nguyên",
-    "bio": "Con trai ông Lê Viết Nguyên Phương."
+    "bio": "Con trai ông Lê Viết Nguyên Phương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 280,
@@ -4279,7 +4937,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Bàng Thị Lệ Yến",
-    "bio": "Con trai ông Lê Viết Nguyên Phong."
+    "bio": "Con trai ông Lê Viết Nguyên Phong.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 281,
@@ -4292,7 +4952,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Bàng Thị Lệ Yến",
-    "bio": "Con trai ông Lê Viết Nguyên Phong."
+    "bio": "Con trai ông Lê Viết Nguyên Phong.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 282,
@@ -4305,7 +4967,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Bàng Thị Lệ Yến",
-    "bio": "Con trai ông Lê Viết Nguyên Phong."
+    "bio": "Con trai ông Lê Viết Nguyên Phong.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 283,
@@ -4318,7 +4982,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Nở",
-    "bio": "Con gái ông Lê Viết Chí Tâm."
+    "bio": "Con gái ông Lê Viết Chí Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 284,
@@ -4331,7 +4997,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Nở",
-    "bio": "Con gái ông Lê Viết Chí Tâm."
+    "bio": "Con gái ông Lê Viết Chí Tâm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 285,
@@ -4343,7 +5011,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "bio": "Con trai ông Lê Viết Thiệu Bảo."
+    "bio": "Con trai ông Lê Viết Thiệu Bảo.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 286,
@@ -4355,7 +5025,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "bio": "Con trai ông Lê Viết Thiệu Bảo."
+    "bio": "Con trai ông Lê Viết Thiệu Bảo.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 287,
@@ -4368,7 +5040,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Ngọc Bích",
-    "bio": "Con trai ông Lê Viết Minh Chương."
+    "bio": "Con trai ông Lê Viết Minh Chương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 288,
@@ -4381,7 +5055,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Thuỳ Trang",
-    "bio": "Con trai ông Lê Viết Cường."
+    "bio": "Con trai ông Lê Viết Cường.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 289,
@@ -4401,10 +5077,12 @@ export const INITIAL_MEMBERS = [
         "role": "Vợ chánh",
         "deathDate": "09-09 ÂL",
         "graveLocation": "Mộ tại xứ Cổ Thành",
-        "note": "Con gái ông Nguyễn Đình Phu ở làng"
+        "note": "Con gái ông Nguyễn Đình Phu ở làng",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tường."
+    "bio": "Con trai ông Lê Viết Tường.",
+    "graveCoords": ""
   },
   {
     "id": 290,
@@ -4421,10 +5099,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Luận",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn làng An Ninh Hạ"
+        "note": "Con gái Họ Nguyễn làng An Ninh Hạ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đạm."
+    "bio": "Con trai ông Lê Viết Đạm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 291,
@@ -4437,7 +5119,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Đức",
-    "bio": "Con trai ông Lê Viết Đạm."
+    "bio": "Con trai ông Lê Viết Đạm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 292,
@@ -4454,10 +5138,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Võ Thị Ngọ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Võ làng Vân Quật Thượng"
+        "note": "Con gái Họ Võ làng Vân Quật Thượng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đạm."
+    "bio": "Con trai ông Lê Viết Đạm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 293,
@@ -4470,7 +5158,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Đức",
-    "bio": "Con gái ông Lê Viết Đạm gả người Họ Nguyễn, làng Bao Vinh."
+    "bio": "Con gái ông Lê Viết Đạm gả người Họ Nguyễn, làng Bao Vinh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 294,
@@ -4483,7 +5173,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Đức",
-    "bio": "Con gái ông Lê Viết Đạm gả người Họ Lê, làng Nam Thanh."
+    "bio": "Con gái ông Lê Viết Đạm gả người Họ Lê, làng Nam Thanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 295,
@@ -4496,7 +5188,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Đức",
-    "bio": "Con gái ông Lê Viết Đạm gả người Họ Võ, làng Vân Quật Thượng."
+    "bio": "Con gái ông Lê Viết Đạm gả người Họ Võ, làng Vân Quật Thượng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 296,
@@ -4509,7 +5203,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Đức",
-    "bio": "Con gái ông Lê Viết Đạm gả người Họ Phan, làng Kim Đôi."
+    "bio": "Con gái ông Lê Viết Đạm gả người Họ Phan, làng Kim Đôi.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 297,
@@ -4526,10 +5222,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Khâm",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê làng Vân Quật Thượng"
+        "note": "Con gái Họ Lê làng Vân Quật Thượng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đạm."
+    "bio": "Con trai ông Lê Viết Đạm.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 298,
@@ -4542,7 +5242,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con gái ông Lê Viết Dật."
+    "bio": "Con gái ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 299,
@@ -4555,7 +5257,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con trai ông Lê Viết Dật."
+    "bio": "Con trai ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 300,
@@ -4568,7 +5272,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con trai ông Lê Viết Dật."
+    "bio": "Con trai ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 301,
@@ -4581,7 +5287,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con gái ông Lê Viết Dật."
+    "bio": "Con gái ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 302,
@@ -4594,7 +5302,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con trai ông Lê Viết Dật."
+    "bio": "Con trai ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 303,
@@ -4607,7 +5317,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con gái ông Lê Viết Dật."
+    "bio": "Con gái ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 304,
@@ -4620,7 +5332,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con gái ông Lê Viết Dật."
+    "bio": "Con gái ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 305,
@@ -4633,7 +5347,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Luận",
-    "bio": "Con trai ông Lê Viết Dật."
+    "bio": "Con trai ông Lê Viết Dật.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 306,
@@ -4646,7 +5362,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con trai ông Lê Viết Xá."
+    "bio": "Con trai ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 307,
@@ -4659,7 +5377,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con trai ông Lê Viết Xá."
+    "bio": "Con trai ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 308,
@@ -4672,7 +5392,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con gái ông Lê Viết Xá."
+    "bio": "Con gái ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 309,
@@ -4685,7 +5407,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con trai ông Lê Viết Xá."
+    "bio": "Con trai ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 310,
@@ -4698,7 +5422,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con gái ông Lê Viết Xá."
+    "bio": "Con gái ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 311,
@@ -4711,7 +5437,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con gái ông Lê Viết Xá."
+    "bio": "Con gái ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 312,
@@ -4724,7 +5452,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Võ Thị Ngọ",
-    "bio": "Con gái ông Lê Viết Xá."
+    "bio": "Con gái ông Lê Viết Xá.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 313,
@@ -4737,7 +5467,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Khâm",
-    "bio": "Con trai ông Lê Viết Ngưu."
+    "bio": "Con trai ông Lê Viết Ngưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 314,
@@ -4750,7 +5482,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Lê Thị Khâm",
-    "bio": "Con Vô danh ông Lê Viết Ngưu."
+    "bio": "Con Vô danh ông Lê Viết Ngưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 315,
@@ -4763,7 +5497,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Khâm",
-    "bio": "Con trai ông Lê Viết Ngưu."
+    "bio": "Con trai ông Lê Viết Ngưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 316,
@@ -4776,7 +5512,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Khâm",
-    "bio": "Con trai ông Lê Viết Ngưu."
+    "bio": "Con trai ông Lê Viết Ngưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 317,
@@ -4789,7 +5527,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Khâm",
-    "bio": "Con gái ông Lê Viết Ngưu."
+    "bio": "Con gái ông Lê Viết Ngưu.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 318,
@@ -4802,7 +5542,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con Vô danh ông Lê Viết Khanh."
+    "bio": "Con Vô danh ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 319,
@@ -4815,7 +5557,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con gái ông Lê Viết Khanh gả ông Khóa Chung làng Phù Ổ."
+    "bio": "Con gái ông Lê Viết Khanh gả ông Khóa Chung làng Phù Ổ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 320,
@@ -4827,8 +5571,8 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "08-11 ÂL",
-    "graveLocation": "16.534246, 107.549611",
-    "graveCoords": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.534246, 107.549611",
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con trai ông Lê Viết Khanh."
   },
@@ -4843,7 +5587,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con Vô danh ông Lê Viết Khanh."
+    "bio": "Con Vô danh ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 322,
@@ -4856,7 +5602,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con trai ông Lê Viết Khanh."
+    "bio": "Con trai ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 323,
@@ -4868,8 +5616,8 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "20-06 ÂL",
-    "graveLocation": "16.533783, 107.549440",
-    "graveCoords": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.533783, 107.549440",
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con gái ông Lê Viết Khanh gả ông Nguyễn Ngọc Ái ở làng."
   },
@@ -4884,7 +5632,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con gái ông Lê Viết Khanh gả ông Lê Viễn làng Tây Thành."
+    "bio": "Con gái ông Lê Viết Khanh gả ông Lê Viễn làng Tây Thành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 325,
@@ -4897,7 +5647,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "16-05 ÂL",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con gái ông Lê Viết Khanh."
+    "bio": "Con gái ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 326,
@@ -4909,18 +5661,22 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "graveLocation": "16.548885, 107.557800",
-    "graveCoords": "Mã Cao - Làng Phú Ngạn, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Mã Cao - Làng Phú Ngạn, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.548885, 107.557800",
     "motherName": "Nguyễn Thị Quyến",
     "spouses": [
       {
         "name": "Ngô Thị Hạ",
         "role": "Vợ chánh",
-        "note": "Con gái tỉnh Hưng Yên (cải giá)"
+        "note": "Con gái tỉnh Hưng Yên (cải giá)",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Trần Thị Hiệp",
-        "role": "Vợ thứ"
+        "role": "Vợ thứ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
     "bio": "Con trai ông Lê Viết Khanh."
@@ -4936,7 +5692,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con Vô danh ông Lê Viết Khanh."
+    "bio": "Con Vô danh ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 328,
@@ -4949,7 +5707,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con gái ông Lê Viết Khanh gả ông Trần Văn Đóa ở làng."
+    "bio": "Con gái ông Lê Viết Khanh gả ông Trần Văn Đóa ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 329,
@@ -4962,7 +5722,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con Vô danh ông Lê Viết Khanh."
+    "bio": "Con Vô danh ông Lê Viết Khanh.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 330,
@@ -4974,24 +5736,30 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "04-01 ÂL",
-    "graveLocation": "16.548699, 107.557512",
-    "graveCoords": "Mã Cao - Làng Phú Ngạn, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Mã Cao - Làng Phú Ngạn, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.548699, 107.557512",
     "motherName": "Nguyễn Thị Quyến",
     "spouses": [
       {
         "name": "Lê Thị Thu",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê làng Tây Thành (cải giá)"
+        "note": "Con gái Họ Lê làng Tây Thành (cải giá)",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Nguyễn Thị Ảnh",
         "role": "Vợ thứ",
-        "note": "Con gái Họ Nguyễn, T.Bến Tre (cải giá)"
+        "note": "Con gái Họ Nguyễn, T.Bến Tre (cải giá)",
+        "graveLocation": "",
+        "graveCoords": ""
       },
       {
         "name": "Phan Thị Hải",
         "role": "Vợ thứ thứ",
-        "note": "Con gái Họ Phan người ở làng"
+        "note": "Con gái Họ Phan người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
     "bio": "Con trai ông Lê Viết Khanh."
@@ -5006,22 +5774,31 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "graveLocation": "Mộ tại Nền Nhà, Bình Dương",
+    "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
     "motherName": "Nguyễn Thị Các",
     "spouses": [
       {
         "name": "Trần Thị Trưng",
         "role": "Vợ chánh",
-        "graveLocation": "Mộ tại Nền Nhà, Bình Dương",
-        "note": "Con gái Họ Trần, T.Bình Dương"
+        "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
+        "note": "Con gái Họ Trần, T.Bình Dương",
+        "graveCoords": "",
+        "hometown": "",
+        "deathDate": ""
       },
       {
         "name": "Trần Thị Ba",
         "role": "Vợ thứ",
-        "graveLocation": "Mộ tại Nền Nhà, Bình Dương"
+        "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
+        "graveCoords": "",
+        "hometown": "",
+        "deathDate": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Khanh."
+    "bio": "Con trai ông Lê Viết Khanh.",
+    "graveCoords": "",
+    "address": "",
+    "graveNote": ""
   },
   {
     "id": 332,
@@ -5035,7 +5812,8 @@ export const INITIAL_MEMBERS = [
     "deathDate": "22-12 ÂL",
     "graveLocation": "Mộ tại tỉnh Hưng Yên",
     "motherName": "Ngô Thị Hạ",
-    "bio": "Con gái ông Lê Viết Tảo."
+    "bio": "Con gái ông Lê Viết Tảo.",
+    "graveCoords": ""
   },
   {
     "id": 333,
@@ -5048,7 +5826,12 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Hạ",
-    "bio": "Con gái ông Lê Viết Tảo (Xuất gia)."
+    "bio": "Con gái ông Lê Viết Tảo (Xuất gia tại Ni viện Tuệ Quang, Đà Lạt).",
+    "graveLocation": "",
+    "graveCoords": "",
+    "spouses": [],
+    "address": "",
+    "graveNote": ""
   },
   {
     "id": 334,
@@ -5061,7 +5844,12 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Hạ",
-    "bio": "Con gái ông Lê Viết Tảo gả người Họ Nguyễn Văn ở làng."
+    "bio": "Con gái ông Lê Viết Tảo gả ông Nguyễn Văn Anh Tuấn ở làng.",
+    "graveLocation": "",
+    "graveCoords": "",
+    "spouses": [],
+    "address": "",
+    "graveNote": ""
   },
   {
     "id": 335,
@@ -5074,7 +5862,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Hạ",
-    "bio": "Con gái ông Lê Viết Tảo (Thất lạc)."
+    "bio": "Con gái ông Lê Viết Tảo (Thất lạc).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 336,
@@ -5091,10 +5881,18 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Hoàng Thị Hạnh",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Hoàng xã Điền Hải"
+        "note": "Con gái Họ Hoàng xã Điền Hải",
+        "graveLocation": "",
+        "graveCoords": "",
+        "hometown": "Điền Hải, Phong Điền, TT-Huế",
+        "deathDate": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Tảo."
+    "bio": "Con trai ông Lê Viết Tảo.",
+    "graveLocation": "",
+    "graveCoords": "",
+    "address": "",
+    "graveNote": ""
   },
   {
     "id": 337,
@@ -5107,7 +5905,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Hiệp",
-    "bio": "Con gái ông Lê Viết Tảo gả ông Phan Thu làng An Xuân."
+    "bio": "Con gái ông Lê Viết Tảo gả ông Phan Thu làng An Xuân.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 338,
@@ -5120,7 +5920,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Hiệp",
-    "bio": "Con gái ông Lê Viết Tảo gả ông Đào Thế xã Quảng Công."
+    "bio": "Con gái ông Lê Viết Tảo gả ông Đào Thế xã Quảng Công.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 339,
@@ -5133,7 +5935,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Thu",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn làng Thành Trung."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn làng Thành Trung.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 340,
@@ -5145,8 +5949,8 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "graveLocation": "16.534280, 107.549549",
-    "graveCoords": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveCoords": "16.534280, 107.549549",
     "motherName": "Lê Thị Thu",
     "bio": "Con trai ông Lê Viết Lương (Tý)."
   },
@@ -5165,10 +5969,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Phan Thị Liên",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Phan ở xã Bãi Dâu"
+        "note": "Con gái Họ Phan ở xã Bãi Dâu",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Lương."
+    "bio": "Con trai ông Lê Viết Lương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 342,
@@ -5181,7 +5989,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Ảnh",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Huỳnh ở huyện Nhà Bè."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Huỳnh ở huyện Nhà Bè.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 343,
@@ -5194,7 +6004,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Ảnh",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn ở tỉnh Bến Tre."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn ở tỉnh Bến Tre.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 344,
@@ -5207,7 +6019,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Ảnh",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn ở tỉnh Bến Tre."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn ở tỉnh Bến Tre.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 345,
@@ -5224,10 +6038,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Lê Thị Hồng Gấm",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Lê ở huyện Nhà Bè"
+        "note": "Con gái Họ Lê ở huyện Nhà Bè",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Lương."
+    "bio": "Con trai ông Lê Viết Lương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 346,
@@ -5240,7 +6058,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Ảnh",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Mai ở huyện Nhà Bè."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Mai ở huyện Nhà Bè.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 347,
@@ -5253,7 +6073,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Hải",
-    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn làng An Thành."
+    "bio": "Con gái ông Lê-V-Lương gả người Họ Nguyễn làng An Thành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 348,
@@ -5266,7 +6088,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Hải",
-    "bio": "Con trai ông Lê Viết Lương."
+    "bio": "Con trai ông Lê Viết Lương.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 349,
@@ -5279,7 +6103,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Trưng",
-    "bio": "Con gái ông Lê Viết Đài (Con bà chánh)."
+    "bio": "Con gái ông Lê Viết Đài (Con bà chánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 350,
@@ -5292,7 +6118,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Trưng",
-    "bio": "Con trai ông Lê Viết Đài (Con bà chánh)."
+    "bio": "Con trai ông Lê Viết Đài (Con bà chánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 351,
@@ -5308,17 +6136,21 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Thị",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đài (Con bà thứ)."
+    "bio": "Con trai ông Lê Viết Đài (Con bà thứ).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 352,
     "parentId": 331,
     "generation": 8,
     "childOrder": 4,
-    "name": "Lê Viết Văn Tâm",
+    "name": "Lê Viết Văn Tân",
     "title": "Thứ hai",
     "gender": "Nam",
     "birthYear": "Chưa rõ",
@@ -5327,10 +6159,18 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Lê Thị Diệp",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": "",
+        "hometown": "",
+        "deathDate": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đài."
+    "bio": "Con trai ông Lê Viết Đài.",
+    "graveLocation": "",
+    "graveCoords": "",
+    "address": "",
+    "graveNote": ""
   },
   {
     "id": 353,
@@ -5343,7 +6183,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Ba",
-    "bio": "Con gái ông Lê Viết Đài gả người Họ …"
+    "bio": "Con gái ông Lê Viết Đài gả người Họ …",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 354,
@@ -5359,10 +6201,14 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Trần Thị Huê",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đài."
+    "bio": "Con trai ông Lê Viết Đài.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 355,
@@ -5378,10 +6224,14 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Nguyễn Thị Kim Hà",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đài."
+    "bio": "Con trai ông Lê Viết Đài.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 356,
@@ -5397,10 +6247,14 @@ export const INITIAL_MEMBERS = [
     "spouses": [
       {
         "name": "Thị",
-        "role": "Vợ chánh"
+        "role": "Vợ chánh",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Đài."
+    "bio": "Con trai ông Lê Viết Đài.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 357,
@@ -5413,7 +6267,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Ba",
-    "bio": "Con gái ông Lê Viết Đài gả người Họ …"
+    "bio": "Con gái ông Lê Viết Đài gả người Họ …",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 358,
@@ -5425,7 +6281,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Hoàng Thị Hạnh"
+    "motherName": "Hoàng Thị Hạnh",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 359,
@@ -5437,7 +6295,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Hoàng Thị Hạnh"
+    "motherName": "Hoàng Thị Hạnh",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 360,
@@ -5449,7 +6309,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
-    "motherName": "Hoàng Thị Hạnh"
+    "motherName": "Hoàng Thị Hạnh",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 361,
@@ -5461,7 +6323,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Hoàng Thị Hạnh"
+    "motherName": "Hoàng Thị Hạnh",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 362,
@@ -5473,7 +6337,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Phan Thị Liên"
+    "motherName": "Phan Thị Liên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 363,
@@ -5485,7 +6351,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Phan Thị Liên"
+    "motherName": "Phan Thị Liên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 364,
@@ -5497,7 +6365,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Phan Thị Liên"
+    "motherName": "Phan Thị Liên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 365,
@@ -5509,7 +6379,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Hồng Gấm"
+    "motherName": "Lê Thị Hồng Gấm",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 366,
@@ -5521,7 +6393,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Thị"
+    "motherName": "Thị",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 367,
@@ -5533,7 +6407,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Thị"
+    "motherName": "Thị",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 368,
@@ -5545,19 +6421,27 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Diệp"
+    "motherName": "Lê Thị Diệp",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 369,
     "parentId": 352,
     "generation": 9,
     "childOrder": 2,
-    "name": "Lê Thị Xuân",
+    "name": "Lê Thị Xuân Mơ",
     "title": "Con gái",
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Diệp"
+    "motherName": "Lê Thị Diệp",
+    "graveLocation": "",
+    "graveCoords": "",
+    "spouses": [],
+    "address": "",
+    "graveNote": "",
+    "bio": ""
   },
   {
     "id": 370,
@@ -5569,7 +6453,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Lê Thị Diệp"
+    "motherName": "Lê Thị Diệp",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 371,
@@ -5581,7 +6467,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Huê"
+    "motherName": "Trần Thị Huê",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 372,
@@ -5593,7 +6481,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Huê"
+    "motherName": "Trần Thị Huê",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 373,
@@ -5605,7 +6495,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Kim Hà"
+    "motherName": "Nguyễn Thị Kim Hà",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 374,
@@ -5617,7 +6509,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Kim Hà"
+    "motherName": "Nguyễn Thị Kim Hà",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 375,
@@ -5629,7 +6523,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Thị"
+    "motherName": "Thị",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 376,
@@ -5641,7 +6537,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Thị"
+    "motherName": "Thị",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 377,
@@ -5658,10 +6556,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Biên",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn người ở làng"
+        "note": "Con gái Họ Nguyễn người ở làng",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước Hành."
+    "bio": "Con trai ông Lê Phước Hành.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 378,
@@ -5679,10 +6581,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trương Thị Nài",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trương làng Kim Đôi"
+        "note": "Con gái Họ Trương làng Kim Đôi",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước Hành."
+    "bio": "Con trai ông Lê Phước Hành.",
+    "graveCoords": ""
   },
   {
     "id": 379,
@@ -5695,7 +6600,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Nguyễn Thị Biên",
-    "bio": "Con Vô danh ông Lê Phước Hẹ."
+    "bio": "Con Vô danh ông Lê Phước Hẹ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 380,
@@ -5708,7 +6615,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Biên",
-    "bio": "Con gái ông Lê Phước Hẹ gả người Họ Nguyễn ở làng."
+    "bio": "Con gái ông Lê Phước Hẹ gả người Họ Nguyễn ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 381,
@@ -5721,7 +6630,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Biên",
-    "bio": "Con gái ông Lê Phước Hẹ gả người Họ Trần ở làng."
+    "bio": "Con gái ông Lê Phước Hẹ gả người Họ Trần ở làng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 382,
@@ -5739,10 +6650,13 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Sẻ",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần ở xứ Kim Long"
+        "note": "Con gái Họ Trần ở xứ Kim Long",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước Ném."
+    "bio": "Con trai ông Lê Phước Ném.",
+    "graveCoords": ""
   },
   {
     "id": 383,
@@ -5755,7 +6669,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Nài",
-    "bio": "Con gái ông Lê Phước Ném (Thất lạc)."
+    "bio": "Con gái ông Lê Phước Ném (Thất lạc).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 384,
@@ -5772,10 +6688,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Nguyễn Thị Đẩu",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Nguyễn ở xứ Kim Long"
+        "note": "Con gái Họ Nguyễn ở xứ Kim Long",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước An."
+    "bio": "Con trai ông Lê Phước An.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 385,
@@ -5792,10 +6712,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trần Thị Miên",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trần ở xứ Hương Sơ"
+        "note": "Con gái Họ Trần ở xứ Hương Sơ",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước An."
+    "bio": "Con trai ông Lê Phước An.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 386,
@@ -5808,7 +6732,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sẻ",
-    "bio": "Con gái ông Lê Phước An gả người Họ Lê ở xứ Hương Long."
+    "bio": "Con gái ông Lê Phước An gả người Họ Lê ở xứ Hương Long.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 387,
@@ -5825,10 +6751,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Trương Thị Tuyết Nhung",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Trương ở xứ Kim Long"
+        "note": "Con gái Họ Trương ở xứ Kim Long",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước An."
+    "bio": "Con trai ông Lê Phước An.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 388,
@@ -5841,7 +6771,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Sẻ",
-    "bio": "Con gái ông Lê Phước An gả người Họ Nguyễn ở xứ Hương Long."
+    "bio": "Con gái ông Lê Phước An gả người Họ Nguyễn ở xứ Hương Long.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 389,
@@ -5858,10 +6790,14 @@ export const INITIAL_MEMBERS = [
       {
         "name": "Mai Thị Hiền",
         "role": "Vợ chánh",
-        "note": "Con gái Họ Mai ở xứ Kim Long"
+        "note": "Con gái Họ Mai ở xứ Kim Long",
+        "graveLocation": "",
+        "graveCoords": ""
       }
     ],
-    "bio": "Con trai ông Lê Phước An."
+    "bio": "Con trai ông Lê Phước An.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 390,
@@ -5874,7 +6810,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Trần Thị Sẻ",
-    "bio": "Con Vô danh ông Lê Phước An."
+    "bio": "Con Vô danh ông Lê Phước An.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 391,
@@ -5886,7 +6824,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đẩu"
+    "motherName": "Nguyễn Thị Đẩu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 392,
@@ -5898,7 +6838,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đẩu"
+    "motherName": "Nguyễn Thị Đẩu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 393,
@@ -5910,7 +6852,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đẩu"
+    "motherName": "Nguyễn Thị Đẩu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 394,
@@ -5922,7 +6866,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Nguyễn Thị Đẩu"
+    "motherName": "Nguyễn Thị Đẩu",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 395,
@@ -5934,7 +6880,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 396,
@@ -5946,7 +6894,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 397,
@@ -5958,7 +6908,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 398,
@@ -5970,7 +6922,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 399,
@@ -5982,7 +6936,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 400,
@@ -5994,7 +6950,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Miên"
+    "motherName": "Trần Thị Miên",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 401,
@@ -6006,7 +6964,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trương Thị Tuyết Nhung"
+    "motherName": "Trương Thị Tuyết Nhung",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 402,
@@ -6018,7 +6978,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trương Thị Tuyết Nhung"
+    "motherName": "Trương Thị Tuyết Nhung",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 403,
@@ -6030,7 +6992,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Trương Thị Tuyết Nhung"
+    "motherName": "Trương Thị Tuyết Nhung",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 404,
@@ -6042,7 +7006,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Mai Thị Hiền"
+    "motherName": "Mai Thị Hiền",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 405,
@@ -6054,7 +7020,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Mai Thị Hiền"
+    "motherName": "Mai Thị Hiền",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 406,
@@ -6066,7 +7034,9 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
-    "motherName": "Mai Thị Hiền"
+    "motherName": "Mai Thị Hiền",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 407,
@@ -6079,7 +7049,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con gái ông Lê Viết Đăng (húy Đương)."
+    "bio": "Con gái ông Lê Viết Đăng (húy Đương).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 408,
@@ -6092,7 +7064,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con trai ông Lê Viết Đăng (húy Đương)."
+    "bio": "Con trai ông Lê Viết Đăng (húy Đương).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 409,
@@ -6105,7 +7079,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Chen",
-    "bio": "Con gái ông Lê Viết Đăng (húy Đương)."
+    "bio": "Con gái ông Lê Viết Đăng (húy Đương).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 410,
@@ -6118,7 +7094,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con trai ông Lê Viết Em."
+    "bio": "Con trai ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 411,
@@ -6131,7 +7109,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 412,
@@ -6144,7 +7124,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 413,
@@ -6157,7 +7139,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 414,
@@ -6170,7 +7154,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con trai ông Lê Viết Em."
+    "bio": "Con trai ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 415,
@@ -6183,7 +7169,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 416,
@@ -6196,7 +7184,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 417,
@@ -6209,7 +7199,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Nguyễn Thị Cần",
-    "bio": "Con gái ông Lê Viết Em."
+    "bio": "Con gái ông Lê Viết Em.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 418,
@@ -6222,7 +7214,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Ngô Thị Cưỡi",
-    "bio": "Con trai ông Lê Viết Nhất."
+    "bio": "Con trai ông Lê Viết Nhất.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 419,
@@ -6235,7 +7229,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Cưỡi",
-    "bio": "Con gái ông Lê Viết Nhất."
+    "bio": "Con gái ông Lê Viết Nhất.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 420,
@@ -6248,7 +7244,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Em",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 421,
@@ -6261,7 +7259,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Lê Thị Em",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 422,
@@ -6274,7 +7274,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bàn",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 423,
@@ -6287,7 +7289,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Bàn",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 424,
@@ -6300,7 +7304,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Đĩ",
-    "bio": "Con trai ông Lê Viết Trưng."
+    "bio": "Con trai ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 425,
@@ -6313,7 +7319,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trương Thị Đĩ",
-    "bio": "Con trai ông Lê Viết Trưng."
+    "bio": "Con trai ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 426,
@@ -6326,7 +7334,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Thị Dinh",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 427,
@@ -6339,7 +7349,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Thị (Khuyết danh)",
-    "bio": "Con gái ông Lê Viết Trưng."
+    "bio": "Con gái ông Lê Viết Trưng.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 428,
@@ -6352,7 +7364,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con trai ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con trai ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 429,
@@ -6365,7 +7379,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con gái ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con gái ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 430,
@@ -6378,7 +7394,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con gái ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con gái ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 431,
@@ -6391,7 +7409,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con gái ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con gái ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 432,
@@ -6404,7 +7424,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con gái ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con gái ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 433,
@@ -6417,7 +7439,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con trai ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con trai ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 434,
@@ -6430,7 +7454,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con gái ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con gái ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 435,
@@ -6443,7 +7469,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con trai ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con trai ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 436,
@@ -6456,7 +7484,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Đề",
-    "bio": "Con trai ông Lê Viết Khố (húy Khánh)."
+    "bio": "Con trai ông Lê Viết Khố (húy Khánh).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 437,
@@ -6469,7 +7499,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Sừng",
-    "bio": "Con trai ông Lê Viết Đằng (húy Tường)."
+    "bio": "Con trai ông Lê Viết Đằng (húy Tường).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 438,
@@ -6482,7 +7514,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Sừng",
-    "bio": "Con trai ông Lê Viết Đằng (húy Tường)."
+    "bio": "Con trai ông Lê Viết Đằng (húy Tường).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 439,
@@ -6495,7 +7529,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Sừng",
-    "bio": "Con gái ông Lê Viết Đằng (húy Tường)."
+    "bio": "Con gái ông Lê Viết Đằng (húy Tường).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 440,
@@ -6508,7 +7544,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Huỳnh Thị Sừng",
-    "bio": "Con gái ông Lê Viết Đằng (húy Tường)."
+    "bio": "Con gái ông Lê Viết Đằng (húy Tường).",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 441,
@@ -6521,7 +7559,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 442,
@@ -6534,7 +7574,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 443,
@@ -6547,7 +7589,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 444,
@@ -6560,7 +7604,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con trai ông Lê Viết Đệ."
+    "bio": "Con trai ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 445,
@@ -6573,7 +7619,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 446,
@@ -6586,7 +7634,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 447,
@@ -6599,7 +7649,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 448,
@@ -6612,7 +7664,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 449,
@@ -6625,7 +7679,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 450,
@@ -6638,7 +7694,9 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   },
   {
     "id": 451,
@@ -6651,6 +7709,8 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Mất sớm",
     "motherName": "Phan Thị Quào",
-    "bio": "Con gái ông Lê Viết Đệ."
+    "bio": "Con gái ông Lê Viết Đệ.",
+    "graveLocation": "",
+    "graveCoords": ""
   }
 ];

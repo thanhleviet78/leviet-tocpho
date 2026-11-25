@@ -374,70 +374,34 @@ export default function App() {
     setShowAdd(false);
   };
 
-  const handleExportData = () => {
-    const backup = {
-      app: 'LeVietGiaPha',
-      schema: 'leviet-tocpho-backup',
-      version: 1,
-      exportedAt: new Date().toISOString(),
-      members,
-      newsList,
-      revisions,
-      renovations
-    };
-    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json;charset=utf-8' });
+  // Xuất module dữ liệu hoàn chỉnh để thay thế src/data.js trước khi Git Push.
+  // Bao gồm dữ liệu đang quản lý trên localhost và các cấu hình tĩnh hiện tại.
+  const handleExportWebsiteData = () => {
+    const report = validateMembers(members);
+    if (report.errors.length) {
+      alert(`Chưa thể xuất dữ liệu website vì còn ${report.errors.length} lỗi cấu trúc.\n${report.errors.slice(0, 8).join('\n')}`);
+      return;
+    }
+    const exports = [
+      ['FAMILY_INFO', FAMILY_INFO],
+      ['REVISION_HISTORY', revisions],
+      ['TEMPLE_RENOVATIONS', renovations],
+      ['ANNUAL_NEWS', newsList],
+      ['CONTACT_INFO', CONTACT_INFO],
+      ['INITIAL_MEMBERS', members]
+    ];
+    const moduleText = `// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - ${new Date().toISOString()}\n// Dùng thay thế toàn bộ src/data.js, sau đó Git add/commit/push.\n\n` +
+      exports.map(([name, value]) => `export const ${name} = ${JSON.stringify(value, null, 2)};`).join('\n\n') + '\n';
+    const blob = new Blob([moduleText], { type: 'text/javascript;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `gia-pha-le-viet-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    link.download = `data.js`;
+    document.body.appendChild(link);
     link.click();
+    link.remove();
     URL.revokeObjectURL(url);
-  };
-
-  const handleValidateData = () => {
-    const report = validateMembers(members);
-    const lines = [
-      `RÀ SOÁT DỮ LIỆU GIA PHẢ`,
-      `Tổng số thành viên: ${members.length}`,
-      `Lỗi cần xử lý: ${report.errors.length}`,
-      `Cảnh báo cần đối chiếu: ${report.warnings.length}`,
-      '',
-      ...(report.errors.length ? ['LỖI:', ...report.errors.slice(0, 25).map((item) => `• ${item}`)] : ['Không phát hiện lỗi cấu trúc nghiêm trọng.']),
-      ...(report.warnings.length ? ['', 'CẢNH BÁO:', ...report.warnings.slice(0, 20).map((item) => `• ${item}`)] : ['Không có cảnh báo.']),
-    ];
-    if (report.errors.length > 25 || report.warnings.length > 20) lines.push('', 'Danh sách được rút gọn để hiển thị.');
-    alert(lines.join('\n'));
-  };
-
-  const handleImportBackup = async (event) => {
-    const file = event.target.files?.[0];
-    event.target.value = '';
-    if (!file) return;
-    try {
-      const imported = JSON.parse(await file.text());
-      if (!Array.isArray(imported.members) || imported.members.length === 0) {
-        throw new Error('File sao lưu không có danh sách thành viên hợp lệ.');
-      }
-      for (const key of ['newsList', 'revisions', 'renovations']) {
-        if (imported[key] !== undefined && !Array.isArray(imported[key])) {
-          throw new Error(`Mục ${key} trong file sao lưu không đúng định dạng danh sách.`);
-        }
-      }
-      const report = validateMembers(imported.members);
-      if (report.errors.length) {
-        throw new Error(`File có ${report.errors.length} lỗi cấu trúc. ${report.errors.slice(0, 5).join(' ')}`);
-      }
-      const warningText = report.warnings.length ? `\n\nCảnh báo: ${report.warnings.slice(0, 3).join(' ')}` : '';
-      if (!window.confirm(`Nhập ${imported.members.length} thành viên từ file sao lưu? Dữ liệu hiện tại sẽ được thay thế. Một bản sao dữ liệu hiện tại sẽ được tải xuống trước khi nhập.${warningText}`)) return;
-      handleExportData();
-      setMembers(imported.members);
-      if (Array.isArray(imported.newsList)) setNewsList(imported.newsList);
-      if (Array.isArray(imported.revisions)) setRevisions(imported.revisions);
-      if (Array.isArray(imported.renovations)) setRenovations(imported.renovations);
-      alert('Đã nhập dữ liệu sao lưu thành công.');
-    } catch (error) {
-      alert(`Không thể nhập file sao lưu: ${error.message}`);
-    }
+    alert(`Đã xuất data.js với ${members.length} thành viên. Hãy chép file này đè lên src/data.js trong dự án trước khi Git Push.`);
   };
 
   const memorials = members.filter(
@@ -870,16 +834,10 @@ export default function App() {
 
           {IS_LOCAL_ADMIN && (
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            <button type="button" onClick={handleValidateData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
-              <BookOpen size={16} /> Rà soát dữ liệu
+            <button type="button" onClick={handleExportWebsiteData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#166534', color: '#fff', border: '1px solid #86efac', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '700', cursor: 'pointer' }} title="Xuất src/data.js đã cập nhật để đưa lên website công khai">
+              <Download size={16} /> Xuất dữ liệu cập nhật website
             </button>
-            <button type="button" onClick={handleExportData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
-              <Download size={16} /> Sao lưu dữ liệu
-            </button>
-            <label style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 251, 235, 0.16)', color: '#fde68a', border: '1px solid #fde68a', borderRadius: '8px', padding: '8px 14px', fontSize: '13px', fontWeight: '600', cursor: 'pointer' }}>
-              <Users size={16} /> Nhập bản sao lưu
-              <input type="file" accept=".json,application/json" onChange={handleImportBackup} style={{ display: 'none' }} />
-            </label>
+
           </div>
           )}
         </div>
