@@ -530,7 +530,7 @@ export default function App() {
             {memberSpouses.length > 0 && (
               <div style={{ fontSize: '13px', color: '#475569', marginTop: '4px', lineHeight: '1.5', wordBreak: 'break-word' }}>
                 <span>
-                  Phối ngẫu:{' '}
+                  Vợ:{' '}
                   <strong>{memberSpouses.map((sp) => sp.name).join(', ')}</strong>
                 </span>
               </div>

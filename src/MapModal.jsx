@@ -72,6 +72,8 @@ export default function MapModal({ mapModal, onClose }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <a
             href={googleMapsLink}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: 'flex',
               alignItems: 'center',

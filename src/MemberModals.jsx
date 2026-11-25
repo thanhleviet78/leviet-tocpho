@@ -241,7 +241,7 @@ export default function MemberModals({
                   {editForm.spouses.map((sp, idx) => (
                     <div key={idx} style={{ backgroundColor: '#ffffff', padding: '10px', borderRadius: '6px', border: '1px solid #fcd34d', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người phối ngẫu ${idx + 1}`}</strong>
+                        <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người vợ ${idx + 1}`}</strong>
                         {idx > 0 && (
                           <button type="button" onClick={() => handleEditRemoveSpouse(idx)} style={{ background: 'none', border: 'none', color: '#dc2626', cursor: 'pointer', fontSize: '12px' }}>
                             <Trash2 size={13} /> Xóa
@@ -294,12 +294,14 @@ export default function MemberModals({
                 <p><strong>Quê quán / Nơi ở:</strong> {selected.address || 'Chưa cập nhật'}</p>
 
                 <div style={{ margin: '12px 0' }}>
-                  <strong>Thông tin Phối ngẫu (Vợ / Chồng):</strong>
+                  <strong>Thông tin Vợ:</strong>
                   {normalizeSpouses(selected).length > 0 ? (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '6px' }}>
                       {normalizeSpouses(selected).map((sp, i) => (
                         <div key={i} style={{ padding: '10px 12px', backgroundColor: '#fffbeb', borderRadius: '8px', borderLeft: '3px solid #d97706', fontSize: '13px' }}>
-                          <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.name}</div>
+                          <div style={{ fontWeight: '700', color: '#78350f' }}>
+                            {i === 0 ? 'Vợ chánh' : `Vợ ${'thứ '.repeat(i).trim()}`}: {sp.name}
+                          </div>
                           {sp.birthYear && <div style={{ color: '#475569', marginTop: '2px' }}>• Năm sinh: {sp.birthYear}</div>}
                           {sp.deathYear && <div style={{ color: '#475569', marginTop: '2px' }}>• Năm mất: {sp.deathYear}</div>}
                           {sp.hometown && <div style={{ color: '#475569', marginTop: '2px' }}>• Quê quán / Xuất thân: {sp.hometown}</div>}
@@ -435,7 +437,7 @@ export default function MemberModals({
                 {form.spouses.map((sp, idx) => (
                   <div key={idx} style={{ backgroundColor: '#ffffff', padding: '10px', borderRadius: '6px', border: '1px solid #fcd34d', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người phối ngẫu ${idx + 1}`}</strong>
+                      <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người vợ ${idx + 1}`}</strong>
                       {idx > 0 && (
                         <button type="button" onClick={() => handleRemoveSpouse(idx)} style={{ background: 'none', border: 'none', color: '#dc2626', cursor: 'pointer', fontSize: '12px' }}>
                           <Trash2 size={13} /> Xóa
