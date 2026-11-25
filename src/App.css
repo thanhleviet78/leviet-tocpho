@@ -513,3 +513,60 @@ body {
 }
 
 
+
+
+/* Thư viện ảnh Nhà thờ họ */
+.temple-gallery-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+}
+.temple-gallery-intro {
+  margin: 0 0 20px;
+  color: #475569;
+  text-align: center;
+  line-height: 1.6;
+}
+.temple-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+.temple-gallery-card {
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5dcc8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.temple-gallery-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #fef3c7;
+}
+.temple-gallery-card figcaption {
+  padding: 10px 12px;
+  color: #7c1d1d;
+  font-size: 14px;
+  font-weight: 600;
+}
+.temple-gallery-empty {
+  max-width: 680px;
+  margin: 24px auto;
+  padding: 36px 24px;
+  text-align: center;
+  color: #92400e;
+  background: #fff;
+  border: 1px dashed #d6b979;
+  border-radius: 12px;
+}
+.temple-gallery-empty h3 { margin: 12px 0 8px; color: #7c1d1d; }
+.temple-gallery-empty p { margin: 0; color: #475569; line-height: 1.7; }
+.temple-gallery-empty code { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .temple-gallery-page { padding: 18px 14px 30px; }
+  .temple-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+}

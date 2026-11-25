@@ -1,0 +1,10 @@
+THU MUC LUU ANH NHA THO HO
+
+1. Chep cac anh JPG, PNG hoac WebP vao thu muc nay.
+2. Dat ten tep khong dau, khong khoang trang, vi du: nha-tho-ho-01.webp
+3. Mo src/gallery.js va them:
+   { src: '/images/nha-tho-ho/nha-tho-ho-01.webp', caption: 'Toan canh nha tho ho' },
+4. Luu tep, chay thu local. Khi dang website, day ca thu muc anh va src/gallery.js len GitHub.
+
+Nen nen anh WebP/JPG, rong khoang 1200-1600 px, dung luong khoang 200-500 KB/anh.
+Anh duoc tai lazy khi vao tab anh va cuon den anh, khong tai toan bo luc mo trang chu.

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { UserPlus, Search, Calendar, MapPin, ChevronRight, ChevronDown, ChevronsDown, ChevronsUp, Landmark, BookOpen, Download, Home, Users, PhoneCall, Newspaper } from 'lucide-react';
+import { UserPlus, Search, Calendar, MapPin, ChevronRight, ChevronDown, ChevronsDown, ChevronsUp, Landmark, BookOpen, Download, Home, Users, PhoneCall, Newspaper, Images } from 'lucide-react';
 import { INITIAL_MEMBERS, FAMILY_INFO, REVISION_HISTORY, ANNUAL_NEWS, CONTACT_INFO, TEMPLE_RENOVATIONS } from './data';
 import MapModal from './MapModal';
 import MemberModals, { normalizeSpouses } from './MemberModals';
 import NewsModals from './NewsModals';
+import { TEMPLE_GALLERY } from './gallery';
 import './App.css';
 
 const GENERATION_LIST = Array.from({ length: 20 }, (_, i) => i + 1);
@@ -138,7 +139,7 @@ return (
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('GIA_PHA'); // Mặc định mở mục Gia phả (có thể đổi thành 'TRANG_CHU')
+  const [activeTab, setActiveTab] = useState('TRANG_CHU'); // Mặc định mở Trang chủ mỗi khi tải website
   const [savedData] = useState(readSavedData);
   const [members, setMembers] = useState(() => normalizeMemberGraves(savedData?.members ?? INITIAL_MEMBERS));
   const [searchTerm, setSearchTerm] = useState('');
@@ -859,6 +860,9 @@ export default function App() {
         <button type="button" onClick={() => setActiveTab('GIA_PHA')} className={`nav-tab ${activeTab === 'GIA_PHA' ? 'active' : ''}`}>
         <Users size={18} /> Gia phả họ Lê Viết
         </button>
+        <button type="button" onClick={() => setActiveTab('ANH_NHA_THO_HO')} className={`nav-tab ${activeTab === 'ANH_NHA_THO_HO' ? 'active' : ''}`}>
+        <Images size={18} /> Ảnh nhà thờ họ
+        </button>
         <button type="button" onClick={() => setActiveTab('LIEN_HE')} className={`nav-tab ${activeTab === 'LIEN_HE' ? 'active' : ''}`}>
         <PhoneCall size={18} /> Liên hệ
         </button>
@@ -983,6 +987,32 @@ export default function App() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* NỘI DUNG MỤC ẢNH NHÀ THỜ HỌ */}
+      {activeTab === 'ANH_NHA_THO_HO' && (
+        <section className="temple-gallery-page">
+          <ScrollDivider title="Hình Ảnh Nhà Thờ Họ Lê Viết" />
+          <p className="temple-gallery-intro">
+            Hình ảnh Từ đường, các dịp tế lễ, tu sửa và sinh hoạt của con cháu trong dòng họ.
+          </p>
+          {TEMPLE_GALLERY.length > 0 ? (
+            <div className="temple-gallery-grid">
+              {TEMPLE_GALLERY.map((photo, index) => (
+                <figure className="temple-gallery-card" key={`${photo.src}-${index}`}>
+                  <img src={photo.src} alt={photo.caption || `Ảnh nhà thờ họ ${index + 1}`} loading="lazy" decoding="async" />
+                  {photo.caption && <figcaption>{photo.caption}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          ) : (
+            <div className="temple-gallery-empty">
+              <Images size={42} />
+              <h3>Chưa có hình ảnh</h3>
+              <p>Hãy chép ảnh vào thư mục <code>public/images/nha-tho-ho/</code>, sau đó khai báo đường dẫn và chú thích trong tệp <code>src/gallery.js</code>.</p>
+            </div>
+          )}
+        </section>
       )}
 
       {/* NỘI DUNG MỤC 2: GIA PHẢ DÒNG HỌ */}
