@@ -1,4 +1,4 @@
-// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T01:32:53.853Z
+// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T02:15:31.943Z
 // Dùng thay thế toàn bộ src/data.js, sau đó Git add/commit/push.
 
 export const FAMILY_INFO = {
@@ -1380,16 +1380,22 @@ export const INITIAL_MEMBERS = [
         "deathDate": "03-05 ÂL",
         "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
         "graveCoords": "16.534267, 107.549503",
-        "note": "Con gái Họ Nguyễn làng Kim Đôi"
+        "note": "Con gái Họ Nguyễn làng Kim Đôi",
+        "hometown": "Kim Đôi, Quảng Thành, Quảng Điền, TT-Huế"
       },
       {
-        "name": "Nguyễn Thị Các",
+        "name": "Lê Thị Các",
         "role": "Vợ thứ",
         "note": "Con gái làng Hương Cần, H. Hương Trà",
-        "graveLocation": "",
-        "graveCoords": ""
+        "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
+        "graveCoords": "",
+        "hometown": "Hương Cần, Hương Trà, TT-Huế",
+        "deathDate": "15-08 ÂL"
       }
-    ]
+    ],
+    "address": "",
+    "graveNote": "",
+    "bio": ""
   },
   {
     "id": 75,
@@ -5775,12 +5781,12 @@ export const INITIAL_MEMBERS = [
     "birthYear": "Chưa rõ",
     "deathDate": "Chưa rõ",
     "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
-    "motherName": "Nguyễn Thị Các",
+    "motherName": "Lê Thị Các",
     "spouses": [
       {
         "name": "Trần Thị Trưng",
         "role": "Vợ chánh",
-        "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
+        "graveLocation": "An táng ở nước Canada",
         "note": "Con gái Họ Trần, T.Bình Dương",
         "graveCoords": "",
         "hometown": "",
@@ -6253,21 +6259,6 @@ export const INITIAL_MEMBERS = [
       }
     ],
     "bio": "Con trai ông Lê Viết Đài.",
-    "graveLocation": "",
-    "graveCoords": ""
-  },
-  {
-    "id": 357,
-    "parentId": 331,
-    "generation": 8,
-    "childOrder": 9,
-    "name": "Lê Thị Cẩm Loan",
-    "title": "Thứ hai",
-    "gender": "Nữ",
-    "birthYear": "Chưa rõ",
-    "deathDate": "Chưa rõ",
-    "motherName": "Trần Thị Ba",
-    "bio": "Con gái ông Lê Viết Đài gả người Họ …",
     "graveLocation": "",
     "graveCoords": ""
   },
