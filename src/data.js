@@ -1,4 +1,4 @@
-// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T02:33:20.132Z
+// TỰ ĐỘNG XUẤT TỪ LOCAL ADMIN - 2026-11-25T07:00:47.172Z
 // Dùng thay thế toàn bộ src/data.js, sau đó Git add/commit/push.
 
 export const FAMILY_INFO = {
@@ -1376,34 +1376,35 @@ export const INITIAL_MEMBERS = [
     "gender": "Nam",
     "birthYear": "1897",
     "deathDate": "05-05 ÂL",
-    "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, TT-Huế",
     "graveCoords": "16.534267, 107.549503",
     "motherName": "Trần Thị Sàn",
     "spouses": [
       {
         "name": "Nguyễn Thị Quyến",
-        "role": "Vợ chánh",
         "deathDate": "03-05 ÂL",
         "graveLocation": "Cồn Cờ song hồn - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
         "graveCoords": "16.534267, 107.549503",
         "note": "Con gái Họ Nguyễn làng Kim Đôi",
-        "hometown": "Làng Kim Đôi, xã Quảng Thành",
-        "birthYear": "1899"
+        "hometown": "Làng Kim Đôi, xã Quảng Thành, Quảng Điền, TT-Huế",
+        "birthYear": "1899",
+        "deathYear": "1979"
       },
       {
         "name": "Lê Thị Các",
-        "role": "Vợ thứ",
         "note": "Con gái làng Hương Cần, H. Hương Trà",
         "graveLocation": "Nghĩa trang nhân dân xã An Long, Ấp 5, xã An Long, TP.HCM",
         "graveCoords": "",
-        "hometown": "Làng Hương Cần, Hương Trà, TT-Huế",
+        "hometown": "Làng Hương Cần, xã Hương Toàn, Hương Trà, TT-Huế",
         "deathDate": "15-08 ÂL",
-        "birthYear": "1902"
+        "birthYear": "1902",
+        "deathYear": ""
       }
     ],
     "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
     "graveNote": "",
-    "bio": ""
+    "bio": "",
+    "deathYear": "1976"
   },
   {
     "id": 75,
@@ -5569,11 +5570,15 @@ export const INITIAL_MEMBERS = [
     "title": "Con gái thứ 2",
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
-    "deathDate": "Chưa rõ",
+    "deathDate": "01-10 ÂL",
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con gái ông Lê Viết Khanh gả ông Khóa Chung làng Phù Ổ.",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": ""
   },
   {
     "id": 320,
@@ -5583,12 +5588,16 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Viết Mai",
     "title": "Con trai thứ 4",
     "gender": "Nam",
-    "birthYear": "Chưa rõ",
+    "birthYear": "1922",
     "deathDate": "08-11 ÂL",
-    "graveLocation": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ - Làng Phú Lương, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
     "graveCoords": "16.534246, 107.549611",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con trai ông Lê Viết Khanh."
+    "bio": "Con trai ông Lê Viết Khanh.",
+    "spouses": [],
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "deathYear": "1946"
   },
   {
     "id": 321,
@@ -5618,7 +5627,11 @@ export const INITIAL_MEMBERS = [
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con trai ông Lê Viết Khanh.",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": ""
   },
   {
     "id": 323,
@@ -5630,10 +5643,14 @@ export const INITIAL_MEMBERS = [
     "gender": "Nữ",
     "birthYear": "Chưa rõ",
     "deathDate": "20-06 ÂL",
-    "graveLocation": "Cồn Cờ - Làng Phú Lương, Quảng Thành, Quảng Điền, Huế",
+    "graveLocation": "Cồn Cờ - Làng Phú Lương, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
     "graveCoords": "16.533783, 107.549440",
     "motherName": "Nguyễn Thị Quyến",
-    "bio": "Con gái ông Lê Viết Khanh gả ông Nguyễn Ngọc Ái ở làng."
+    "bio": "Con gái ông Lê Viết Khanh gả ông Nguyễn Ngọc Ái ở làng.",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": ""
   },
   {
     "id": 324,
@@ -5648,7 +5665,11 @@ export const INITIAL_MEMBERS = [
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con gái ông Lê Viết Khanh gả ông Lê Viễn làng Tây Thành.",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": ""
   },
   {
     "id": 325,
@@ -5663,7 +5684,11 @@ export const INITIAL_MEMBERS = [
     "motherName": "Nguyễn Thị Quyến",
     "bio": "Con gái ông Lê Viết Khanh.",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": ""
   },
   {
     "id": 326,
@@ -5673,27 +5698,36 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Viết Tảo",
     "title": "Con trai thứ 9",
     "gender": "Nam",
-    "birthYear": "Chưa rõ",
-    "deathDate": "Chưa rõ",
-    "graveLocation": "Mã Cao - Làng Phú Ngạn, Quảng Thành, Quảng Điền, Huế",
+    "birthYear": "1933",
+    "deathDate": "12-9 ÂL",
+    "graveLocation": "Mã Cao - Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
     "graveCoords": "16.548885, 107.557800",
     "motherName": "Nguyễn Thị Quyến",
     "spouses": [
       {
         "name": "Ngô Thị Hạ",
-        "role": "Vợ chánh",
         "note": "Con gái tỉnh Hưng Yên (cải giá)",
         "graveLocation": "",
-        "graveCoords": ""
+        "graveCoords": "",
+        "birthYear": "",
+        "hometown": "Hưng Yên",
+        "deathDate": "",
+        "deathYear": ""
       },
       {
         "name": "Trần Thị Hiệp",
-        "role": "Vợ thứ",
         "graveLocation": "",
-        "graveCoords": ""
+        "graveCoords": "",
+        "birthYear": "1945",
+        "hometown": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+        "deathDate": "",
+        "deathYear": ""
       }
     ],
-    "bio": "Con trai ông Lê Viết Khanh."
+    "bio": "Con trai ông Lê Viết Khanh.",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "deathYear": "01-11-2017"
   },
   {
     "id": 327,
@@ -5827,7 +5861,11 @@ export const INITIAL_MEMBERS = [
     "graveLocation": "Mộ tại tỉnh Hưng Yên",
     "motherName": "Ngô Thị Hạ",
     "bio": "Con gái ông Lê Viết Tảo.",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Hưng Yên",
+    "graveNote": ""
   },
   {
     "id": 333,
@@ -5837,15 +5875,16 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Thị Thanh Thảo",
     "title": "Thứ hai",
     "gender": "Nữ",
-    "birthYear": "Chưa rõ",
+    "birthYear": "1967",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Hạ",
-    "bio": "Con gái ông Lê Viết Tảo (Xuất gia tại Ni viện Tuệ Quang, Đà Lạt).",
+    "bio": "Con gái ông Lê Viết Tảo (Xuất gia tại Ni viện Tuệ Quang, 16 Ngô Quyền, phường 6, Đà Lạt).",
     "graveLocation": "",
     "graveCoords": "",
     "spouses": [],
-    "address": "",
-    "graveNote": ""
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "deathYear": ""
   },
   {
     "id": 334,
@@ -5855,15 +5894,16 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Thị Thanh Thái",
     "title": "Thứ ba",
     "gender": "Nữ",
-    "birthYear": "Chưa rõ",
+    "birthYear": "1969",
     "deathDate": "Chưa rõ",
     "motherName": "Ngô Thị Hạ",
     "bio": "Con gái ông Lê Viết Tảo gả ông Nguyễn Văn Anh Tuấn ở làng.",
     "graveLocation": "",
     "graveCoords": "",
     "spouses": [],
-    "address": "",
-    "graveNote": ""
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "deathYear": ""
   },
   {
     "id": 335,
@@ -5878,7 +5918,11 @@ export const INITIAL_MEMBERS = [
     "motherName": "Ngô Thị Hạ",
     "bio": "Con gái ông Lê Viết Tảo (Thất lạc).",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Hưng Yên",
+    "graveNote": ""
   },
   {
     "id": 336,
@@ -5888,25 +5932,27 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Viết Thanh",
     "title": "Thứ nhất",
     "gender": "Nam",
-    "birthYear": "Chưa rõ",
+    "birthYear": "1978",
     "deathDate": "Chưa rõ",
     "motherName": "Trần Thị Hiệp",
     "spouses": [
       {
         "name": "Hoàng Thị Hạnh",
-        "role": "Vợ chánh",
         "note": "Con gái Họ Hoàng xã Điền Hải",
         "graveLocation": "",
         "graveCoords": "",
-        "hometown": "Điền Hải, Phong Điền, TT-Huế",
-        "deathDate": ""
+        "hometown": "xã Điền Hải, huyện Phong Điền, TT-Huế",
+        "deathDate": "",
+        "birthYear": "1979",
+        "deathYear": ""
       }
     ],
     "bio": "Con trai ông Lê Viết Tảo.",
     "graveLocation": "",
     "graveCoords": "",
-    "address": "",
-    "graveNote": ""
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "deathYear": ""
   },
   {
     "id": 337,
@@ -6292,11 +6338,16 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Viết Hoàng Long",
     "title": "Con trai",
     "gender": "Nam",
-    "birthYear": "Chưa rõ",
+    "birthYear": "2006",
     "deathDate": "Chưa rõ",
     "motherName": "Hoàng Thị Hạnh",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "bio": "Con trai ông Lê Viết Thanh"
   },
   {
     "id": 360,
@@ -6320,11 +6371,16 @@ export const INITIAL_MEMBERS = [
     "name": "Lê Thị Hoàng Thảo My",
     "title": "Con gái",
     "gender": "Nữ",
-    "birthYear": "Chưa rõ",
+    "birthYear": "2009",
     "deathDate": "Chưa rõ",
     "motherName": "Hoàng Thị Hạnh",
     "graveLocation": "",
-    "graveCoords": ""
+    "graveCoords": "",
+    "spouses": [],
+    "deathYear": "",
+    "address": "Làng Phú Ngạn, xã Quảng Thành, huyện Quảng Điền, TT-Huế",
+    "graveNote": "",
+    "bio": "Con gái ông Lê Viết Thanh"
   },
   {
     "id": 362,

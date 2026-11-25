@@ -527,20 +527,12 @@ export default function App() {
               })()}
             </div>
 
-            {( (m.birthYear && m.birthYear !== 'Chưa rõ') || memberSpouses.length > 0 ) && (
+            {memberSpouses.length > 0 && (
               <div style={{ fontSize: '13px', color: '#475569', marginTop: '4px', lineHeight: '1.5', wordBreak: 'break-word' }}>
-                {m.birthYear && m.birthYear !== 'Chưa rõ' && (
-                  <span>
-                    Sinh: {m.birthYear}
-                    {memberSpouses.length > 0 ? ' • ' : ''}
-                  </span>
-                )}
-                {memberSpouses.length > 0 && (
-                  <span>
-                    Phối ngẫu:{' '}
-                    <strong>{memberSpouses.map((sp) => `${sp.name}${sp.role ? ` (${sp.role})` : ''}`).join(', ')}</strong>
-                  </span>
-                )}
+                <span>
+                  Phối ngẫu:{' '}
+                  <strong>{memberSpouses.map((sp) => sp.name).join(', ')}</strong>
+                </span>
               </div>
             )}
           </div>
@@ -1131,7 +1123,7 @@ export default function App() {
                 <h2 style={{ margin: '0 0 4px 0', fontSize: '18px', color: '#7c1d1d' }}>
                 {filterGen === 'ALL' ? `Sơ đồ Phả hệ dòng họ (${members.length} thành viên)` : `Danh Sách Thành Viên Đời Thứ ${filterGen} (${filteredByGen.length} người)`}
                 </h2>
-                <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>* Bấm vào từng thẻ thành viên để xem hoặc nhập/sửa thông tin Chồng, Vợ chánh, Vợ thứ và danh sách con cái.</p>
+                <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>* Bấm vào từng thẻ thành viên để xem hoặc nhập/sửa thông tin Vợ / Chồng và danh sách con cái.</p>
               </div>
 
               {filterGen === 'ALL' && (

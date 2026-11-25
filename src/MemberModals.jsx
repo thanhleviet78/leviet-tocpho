@@ -17,7 +17,7 @@ export const normalizeSpouses = (member) => {
   if (!member) return Array.of();
   if (Array.isArray(member.spouses)) return member.spouses;
   if (member.spouse && member.spouse.trim() !== '') {
-    return Array.of({ role: 'Vợ chánh', name: member.spouse, birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' });
+    return Array.of({ name: member.spouse, birthYear: '', deathYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' });
   }
   return Array.of();
 };
@@ -37,10 +37,10 @@ export default function MemberModals({
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState(null);
 
-  const emptySpouse = { role: 'Vợ chánh', name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' };
+  const emptySpouse = { name: '', birthYear: '', deathYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' };
 
   const [form, setForm] = useState({
-    name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '',
+    name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '', deathYear: '',
     deathDate: 'Còn sống', spouses: Array.of({ ...emptySpouse }), avatar: '',
     address: 'Làng Phú Ngạn, xã Quảng Thành (TDP Tây Phú, phường Hóa Châu, TP.Huế)',
     graveLocation: '', graveCoords: '', graveNote: '', parentId: 1, motherName: '', bio: ''
@@ -58,6 +58,7 @@ export default function MemberModals({
     const currentSpouses = normalizeSpouses(selected).map((sp) => ({
       ...normalizeGraveRecord(sp),
       birthYear: cleanPlaceholder(sp.birthYear),
+      deathYear: cleanPlaceholder(sp.deathYear),
       hometown: cleanPlaceholder(sp.hometown),
       deathDate: cleanPlaceholder(sp.deathDate),
       graveLocation: cleanPlaceholder(sp.graveLocation),
@@ -69,6 +70,7 @@ export default function MemberModals({
       childOrder: selected.childOrder ?? '',
       motherName: cleanPlaceholder(selected.motherName),
       birthYear: cleanPlaceholder(selected.birthYear),
+      deathYear: cleanPlaceholder(selected.deathYear),
       deathDate: cleanPlaceholder(selected.deathDate),
       address: cleanPlaceholder(selected.address),
       graveNote: cleanPlaceholder(selected.graveNote),
@@ -79,10 +81,9 @@ export default function MemberModals({
   };
 
   const handleEditAddSpouse = () => {
-    const order = editForm.spouses.length + 1;
     setEditForm({
       ...editForm,
-      spouses: editForm.spouses.concat({ role: `Vợ thứ ${order}`, name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
+      spouses: editForm.spouses.concat({ name: '', birthYear: '', deathYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -98,7 +99,7 @@ export default function MemberModals({
   const submitEdit = (e) => {
     e.preventDefault();
     if (!editForm.name.trim()) return;
-    const cleanSpouses = editForm.spouses.filter((sp) => sp.name.trim() !== '');
+    const cleanSpouses = editForm.spouses.filter((sp) => sp.name.trim() !== '').map(({ role, ...sp }) => sp);
     const isUnnamed = editForm.name.toLowerCase().includes('vô danh');
         onSaveEdit({
       ...editForm,
@@ -113,10 +114,9 @@ export default function MemberModals({
   };
 
   const handleAddSpouse = () => {
-    const order = form.spouses.length + 1;
     setForm({
       ...form,
-      spouses: form.spouses.concat({ role: `Vợ thứ ${order}`, name: '', birthYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
+      spouses: form.spouses.concat({ name: '', birthYear: '', deathYear: '', hometown: '', deathDate: '', graveLocation: '', graveCoords: '' })
     });
   };
 
@@ -132,7 +132,7 @@ export default function MemberModals({
   const submitAdd = (e) => {
     e.preventDefault();
     if (!form.name.trim()) return;
-    const cleanSpouses = form.spouses.filter((sp) => sp.name.trim() !== '');
+    const cleanSpouses = form.spouses.filter((sp) => sp.name.trim() !== '').map(({ role, ...sp }) => sp);
     const isUnnamed = form.name.toLowerCase().includes('vô danh');
     onAddMember({
       ...form,
@@ -143,7 +143,7 @@ export default function MemberModals({
       generation: Number(form.generation)
     });
     setForm({
-      name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '',
+      name: '', gender: 'Nam', generation: 3, childOrder: 1, title: '', birthYear: '', deathYear: '',
       deathDate: 'Còn sống', spouses: Array.of({ ...emptySpouse }), avatar: '',
       address: 'Làng Phú Ngạn, xã Quảng Thành (TDP Tây Phú, phường Hóa Châu, TP.Huế)',
       graveLocation: '', graveCoords: '', graveNote: '', parentId: 1, motherName: '', bio: ''
@@ -209,7 +209,7 @@ export default function MemberModals({
                         <select value={editForm.motherName || ''} onChange={(e) => setEditForm({ ...editForm, motherName: e.target.value })}>
                           <option value="">-- Chọn mẹ đẻ --</option>
                           {editParentSpouses.map((sp, i) => (
-                            <option key={i} value={sp.name}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</option>
+                            <option key={i} value={sp.name}>{sp.name}</option>
                           ))}
                         </select>
                       ) : (
@@ -221,6 +221,7 @@ export default function MemberModals({
                                     <label>Vai vế / Thứ bậc<input placeholder="VD: Con trai đầu, Con gái thứ 2..." value={editForm.title} onChange={(e) => setEditForm({ ...editForm, title: e.target.value })} /></label>
                   <div className="form-row">
                     <label>Năm sinh<input placeholder="VD: 1920 hoặc để trống" value={editForm.birthYear} onChange={(e) => setEditForm({ ...editForm, birthYear: e.target.value })} /></label>
+                    <label>Năm mất<input placeholder="VD: 1998 hoặc để trống" value={editForm.deathYear || ''} onChange={(e) => setEditForm({ ...editForm, deathYear: e.target.value })} /></label>
                     <label>Ngày chánh kỵ (giỗ)<input placeholder="VD: 12-11 Âm lịch hoặc Còn sống" value={editForm.deathDate} onChange={(e) => setEditForm({ ...editForm, deathDate: e.target.value })} /></label>
                   </div>
                   <label>Quê quán / Nơi ở<input placeholder="VD: Làng Phú Ngạn, xã Quảng Thành..." value={editForm.address} onChange={(e) => setEditForm({ ...editForm, address: e.target.value })} /></label>
@@ -231,7 +232,7 @@ export default function MemberModals({
 
                 <div style={{ backgroundColor: '#fffbeb', padding: '12px', borderRadius: '8px', border: '1px solid #fde68a', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '13px', fontWeight: '700', color: '#78350f' }}>2. Thông tin Vợ chánh & Vợ thứ (hoặc Chồng)</span>
+                    <span style={{ fontSize: '13px', fontWeight: '700', color: '#78350f' }}>2. Thông tin Vợ / Chồng</span>
                     <button type="button" onClick={handleEditAddSpouse} style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', backgroundColor: '#b45309', color: '#fff', border: 'none', borderRadius: '6px', padding: '5px 10px', fontSize: '12px', fontWeight: '600', cursor: 'pointer' }}>
                       <Plus size={14} /> Thêm Vợ thứ
                     </button>
@@ -240,7 +241,7 @@ export default function MemberModals({
                   {editForm.spouses.map((sp, idx) => (
                     <div key={idx} style={{ backgroundColor: '#ffffff', padding: '10px', borderRadius: '6px', border: '1px solid #fcd34d', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <strong style={{ fontSize: '12px', color: '#991b1b' }}>{idx === 0 ? 'Vợ chánh / Chồng chính' : `Vợ thứ ${idx + 1}`}</strong>
+                        <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người phối ngẫu ${idx + 1}`}</strong>
                         {idx > 0 && (
                           <button type="button" onClick={() => handleEditRemoveSpouse(idx)} style={{ background: 'none', border: 'none', color: '#dc2626', cursor: 'pointer', fontSize: '12px' }}>
                             <Trash2 size={13} /> Xóa
@@ -248,9 +249,9 @@ export default function MemberModals({
                         )}
                       </div>
                       <div className="form-row">
-                        <input placeholder="Vai vế" value={sp.role} onChange={(e) => handleEditUpdateSpouse(idx, 'role', e.target.value)} />
                         <input placeholder="Họ và tên vợ / chồng" value={sp.name} onChange={(e) => handleEditUpdateSpouse(idx, 'name', e.target.value)} />
                         <input placeholder="Năm sinh" value={sp.birthYear || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'birthYear', e.target.value)} />
+                        <input placeholder="Năm mất" value={sp.deathYear || ''} onChange={(e) => handleEditUpdateSpouse(idx, 'deathYear', e.target.value)} />
                       </div>
                       <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleEditUpdateSpouse(idx, 'hometown', e.target.value)} />
                       <div className="form-row">
@@ -288,6 +289,7 @@ export default function MemberModals({
                   <p><strong>Thân mẫu (Mẹ đẻ):</strong> <span style={{ color: '#991b1b', fontWeight: '600' }}>{selected.motherName}</span></p>
                 )}
                 <p><strong>Năm sinh:</strong> {selected.birthYear || 'Chưa cập nhật'}</p>
+                {selected.deathYear && <p><strong>Năm mất:</strong> {selected.deathYear}</p>}
                 <p><strong>Ngày chánh kỵ (giỗ):</strong> {selected.deathDate}</p>
                 <p><strong>Quê quán / Nơi ở:</strong> {selected.address || 'Chưa cập nhật'}</p>
 
@@ -297,8 +299,9 @@ export default function MemberModals({
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '6px' }}>
                       {normalizeSpouses(selected).map((sp, i) => (
                         <div key={i} style={{ padding: '10px 12px', backgroundColor: '#fffbeb', borderRadius: '8px', borderLeft: '3px solid #d97706', fontSize: '13px' }}>
-                          <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</div>
+                          <div style={{ fontWeight: '700', color: '#78350f' }}>{sp.name}</div>
                           {sp.birthYear && <div style={{ color: '#475569', marginTop: '2px' }}>• Năm sinh: {sp.birthYear}</div>}
+                          {sp.deathYear && <div style={{ color: '#475569', marginTop: '2px' }}>• Năm mất: {sp.deathYear}</div>}
                           {sp.hometown && <div style={{ color: '#475569', marginTop: '2px' }}>• Quê quán / Xuất thân: {sp.hometown}</div>}
                           {sp.deathDate && <div style={{ color: '#b45309', marginTop: '2px' }}>• Ngày chánh kỵ: {sp.deathDate}</div>}
                           {sp.graveLocation && (
@@ -401,7 +404,7 @@ export default function MemberModals({
                     <select value={form.motherName} onChange={(e) => setForm({ ...form, motherName: e.target.value })}>
                       <option value="">-- Chọn mẹ đẻ --</option>
                       {addParentSpouses.map((sp, i) => (
-                        <option key={i} value={sp.name}>{sp.role ? `${sp.role}: ` : ''}{sp.name}</option>
+                        <option key={i} value={sp.name}>{sp.name}</option>
                       ))}
                     </select>
                   ) : (
@@ -412,6 +415,7 @@ export default function MemberModals({
                 <label>Vai vế / Thứ bậc<input placeholder="Ví dụ: Con trai đầu..." value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></label>
                 <div className="form-row">
                   <label>Năm sinh<input value={form.birthYear} onChange={(e) => setForm({ ...form, birthYear: e.target.value })} /></label>
+                  <label>Năm mất<input placeholder="VD: 1998 hoặc để trống" value={form.deathYear || ''} onChange={(e) => setForm({ ...form, deathYear: e.target.value })} /></label>
                   <label>Ngày chánh kỵ (giỗ)<input value={form.deathDate} onChange={(e) => setForm({ ...form, deathDate: e.target.value })} /></label>
                 </div>
                 <label>Quê quán / Nơi ở<input value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} /></label>
@@ -422,7 +426,7 @@ export default function MemberModals({
 
               <div style={{ backgroundColor: '#fffbeb', padding: '12px', borderRadius: '8px', border: '1px solid #fde68a', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '13px', fontWeight: '700', color: '#78350f' }}>2. Thông tin Vợ chánh & Vợ thứ (hoặc Chồng)</span>
+                  <span style={{ fontSize: '13px', fontWeight: '700', color: '#78350f' }}>2. Thông tin Vợ / Chồng</span>
                   <button type="button" onClick={handleAddSpouse} style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', backgroundColor: '#b45309', color: '#fff', border: 'none', borderRadius: '6px', padding: '5px 10px', fontSize: '12px', fontWeight: '600', cursor: 'pointer' }}>
                     <Plus size={14} /> Thêm Vợ thứ
                   </button>
@@ -431,7 +435,7 @@ export default function MemberModals({
                 {form.spouses.map((sp, idx) => (
                   <div key={idx} style={{ backgroundColor: '#ffffff', padding: '10px', borderRadius: '6px', border: '1px solid #fcd34d', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <strong style={{ fontSize: '12px', color: '#991b1b' }}>{idx === 0 ? 'Vợ chánh / Chồng chính' : `Vợ thứ ${idx + 1}`}</strong>
+                      <strong style={{ fontSize: '12px', color: '#991b1b' }}>{`Người phối ngẫu ${idx + 1}`}</strong>
                       {idx > 0 && (
                         <button type="button" onClick={() => handleRemoveSpouse(idx)} style={{ background: 'none', border: 'none', color: '#dc2626', cursor: 'pointer', fontSize: '12px' }}>
                           <Trash2 size={13} /> Xóa
@@ -439,9 +443,9 @@ export default function MemberModals({
                       )}
                     </div>
                     <div className="form-row">
-                      <input placeholder="Vai vế" value={sp.role} onChange={(e) => handleUpdateSpouse(idx, 'role', e.target.value)} />
                       <input placeholder="Họ và tên vợ / chồng" value={sp.name} onChange={(e) => handleUpdateSpouse(idx, 'name', e.target.value)} />
                       <input placeholder="Năm sinh" value={sp.birthYear || ''} onChange={(e) => handleUpdateSpouse(idx, 'birthYear', e.target.value)} />
+                      <input placeholder="Năm mất" value={sp.deathYear || ''} onChange={(e) => handleUpdateSpouse(idx, 'deathYear', e.target.value)} />
                     </div>
                     <input placeholder="Quê quán / Nơi ở của vợ" value={sp.hometown} onChange={(e) => handleUpdateSpouse(idx, 'hometown', e.target.value)} />
                     <div className="form-row">
