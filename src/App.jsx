@@ -587,10 +587,10 @@ export default function App() {
             color: genNum === 1 ? '#fde68a' : '#0f172a',
             border: isMatched || genNum === 1 ? '2px solid #d97706' : isFemale ? '1.5px solid #f472b6' : '1.5px solid #991b1b',
             borderRadius: '5px',
-            padding: isTopHorizontal ? '5px 10px' : '4px 2px',
-            width: isTopHorizontal ? 'auto' : '30px',
-            minWidth: isTopHorizontal ? '92px' : '30px',
-            minHeight: isTopHorizontal ? 'auto' : '78px',
+            padding: isTopHorizontal ? '6px 11px' : '5px 3px',
+            width: isTopHorizontal ? 'auto' : '36px',
+            minWidth: isTopHorizontal ? '92px' : '36px',
+            minHeight: isTopHorizontal ? 'auto' : '86px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -604,18 +604,18 @@ export default function App() {
         >
           {isTopHorizontal ? (
             <>
-              <div style={{ fontSize: '9px', fontWeight: '700', marginBottom: '2px', color: genNum === 1 ? '#fcd34d' : '#991b1b' }}>
+              <div style={{ fontSize: '10px', fontWeight: '700', marginBottom: '3px', color: genNum === 1 ? '#fcd34d' : '#991b1b' }}>
                 {genNum === 1 ? 'Đời thứ I' : `Đ${genNum} • ${member.childOrder === 1 ? 'Trưởng' : `T.${member.childOrder}`}`}
               </div>
-              <div style={{ fontSize: '12px', fontWeight: '800', whiteSpace: 'nowrap' }}>{displayTitle}</div>
+              <div style={{ fontSize: '14px', fontWeight: '800', whiteSpace: 'nowrap' }}>{displayTitle}</div>
             </>
           ) : (
             <>
-              <div style={{ fontSize: '8px', fontWeight: '800', borderBottom: '1px solid #e2e8f0', paddingBottom: '2px', marginBottom: '3px', width: '100%', color: '#991b1b', lineHeight: '1.1' }}>
+              <div style={{ fontSize: '9.5px', fontWeight: '800', borderBottom: '1px solid #e2e8f0', paddingBottom: '2px', marginBottom: '3px', width: '100%', color: '#991b1b', lineHeight: '1.1' }}>
                 <div>Đ{genNum}</div>
-                <div style={{ fontSize: '7.5px', opacity: 0.85 }}>{member.childOrder === 1 ? 'Trưởng' : `T.${member.childOrder}`}</div>
+                <div style={{ fontSize: '8.5px', opacity: 0.85 }}>{member.childOrder === 1 ? 'Trưởng' : `T.${member.childOrder}`}</div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '10.5px', fontWeight: '700', lineHeight: '1.12' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '12.5px', fontWeight: '700', lineHeight: '1.18' }}>
                 {verticalWords.map((word, wIdx) => (
                   <span key={wIdx}>{word}</span>
                 ))}
@@ -644,7 +644,7 @@ export default function App() {
           <div style={{ width: '1.5px', height: '10px', backgroundColor: '#991b1b' }} />
 
           {isLeafCluster ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, auto)', gap: '4px 3px', padding: '6px', borderTop: '1.5px solid #991b1b', backgroundColor: 'rgba(254, 243, 199, 0.35)', borderRadius: '6px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, auto)', gap: '5px 4px', padding: '7px', borderTop: '1.5px solid #991b1b', backgroundColor: 'rgba(254, 243, 199, 0.35)', borderRadius: '6px' }}>
               {children.map((child) => (
                 <div key={child.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   {renderNodeCard(child)}
@@ -661,7 +661,7 @@ export default function App() {
                 const isChildExpanded = treeExpandedIds.includes(child.id);
 
                 return (
-                  <div key={child.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', padding: Number(child.generation) <= 3 ? '0 4px' : '0 1.5px' }}>
+                  <div key={child.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', padding: Number(child.generation) <= 3 ? '0 4px' : '0 2px' }}>
                     {!isOnly && (
                       <div style={{ position: 'absolute', top: 0, left: isFirst ? '50%' : 0, right: isLast ? '50%' : 0, height: '1.5px', backgroundColor: '#991b1b' }} />
                     )}
